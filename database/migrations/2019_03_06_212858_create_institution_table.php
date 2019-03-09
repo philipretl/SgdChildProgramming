@@ -14,7 +14,11 @@ class CreateInstitutionTable extends Migration
     public function up()
     {
         Schema::create('institution', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id_Institution');
+            $table->string('name_Institution');
+            $table->string('address_Institution')->nullable();
+            $table->string('phone_Institution')->nullable();
+            $table->string('code_Institution')->nullable();  
             $table->timestamps();
         });
     }

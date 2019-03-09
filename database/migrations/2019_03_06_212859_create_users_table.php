@@ -19,11 +19,14 @@ class CreateUsersTable extends Migration
             $table->string('email_User')->unique();
             $table->string('password_User');
             $table->string('phone_User');
-            $table->enum('confirmate',['true','false'])->nullable()->default('false');
-            $table->string('codeConfirmation_User')->nullable()->unique();
-            $table->enum('tipo',['tutor', 'admin' ])->default('tutor');
+            $table->enum('confirmate_User',['true','false'])->nullable()->default('false');
+            $table->string('code_Confirmation_User')->nullable()->unique();
+            $table->enum('type_User',['tutor_User', 'admin_User' ])->default('tutor_User');
+            $table->integer('id_Institution')->unsigned()->nullable();
             $table->rememberToken();
             $table->timestamps();
+
+            $table->foreign('id_Institution')->references('id_Institution')->on('institution');
         });
     }
 

@@ -14,8 +14,13 @@ class CreateCollaborativeProcessTable extends Migration
     public function up()
     {
         Schema::create('collaborative_process', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id_Collaborative_Process');
+            $table->string('name_Collaborative_Process');
+            $table->string('goal_Collaborative_Process');
+            $table->integer('id_User')->unsigned();
             $table->timestamps();
+
+            $table->foreign('id_User')->references('id_User')->on('users')->onDelete('cascade');
         });
     }
 
