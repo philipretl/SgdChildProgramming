@@ -19,7 +19,11 @@ class CreateGDinamicaTable extends Migration
             $table->string('description_G_Dinamica');
             $table->string('utility_G_Dinamica');
             $table->string('target_G_Dinamica');
+            $table->integer('id_Strategy_Gamification')->unsigned();
             $table->timestamps();
+            
+            $table->foreign('id_Strategy_Gamification')->references
+            ('id_Strategy_Gamification')->on('strategy_gamification');
         });
     }
 

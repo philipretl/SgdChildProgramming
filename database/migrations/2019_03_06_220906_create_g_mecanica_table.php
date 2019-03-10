@@ -19,10 +19,10 @@ class CreateGMecanicaTable extends Migration
             $table->string('description_G_Mecanica');
             $table->string('utility_G_Mecanica');
             $table->string('target_G_Mecanica');
-            $table->integer('id_G_Dinamica');
+            $table->integer('id_G_Dinamica')->unsigned();
             $table->timestamps();
 
-            $foreign('id_G_Dinamica')->references('id_G_Dinamica')
+            $table->foreign('id_G_Dinamica')->references('id_G_Dinamica')
             ->on('g_dinamica');
         });
     }

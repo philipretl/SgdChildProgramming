@@ -14,8 +14,17 @@ class CreateThinkletTable extends Migration
     public function up()
     {
         Schema::create('thinklet', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id_Thinklet');
+            $table->string('name_Thinklet');
+            $table->string('description_Thinklet');
+            $table->string('inputs_Thinklet');
+            $table->string('outputs_Thinklet');
+            $table->string('steps_Thinklet');
+            $table->integer('id_Collaborative_Process')->unsigned();
             $table->timestamps();
+
+            $table->foreign('id_Collaborative_Process')
+            ->references('id_Collaborative_Process')->on('collaborative_process');
         });
     }
 

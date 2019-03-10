@@ -14,8 +14,14 @@ class CreateCollaborativePatternsTable extends Migration
     public function up()
     {
         Schema::create('collaborative_patterns', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id_Collaborative_Patterns');
+            $table->string('name_Collaborative_Patterns');
+            $table->string('description_Collaborative_Patterns');
+            $table->integer('id_Thinklet')->unsigned();
             $table->timestamps();
+
+            $table->foreign('id_Thinklet')->references('id_Thinklet')
+            ->on('thinklet');
         });
     }
 
