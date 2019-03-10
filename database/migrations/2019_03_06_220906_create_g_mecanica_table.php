@@ -14,8 +14,16 @@ class CreateGMecanicaTable extends Migration
     public function up()
     {
         Schema::create('g_mecanica', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id_G_Mecanica');
+            $table->string('name_G_Mecanica');
+            $table->string('description_G_Mecanica');
+            $table->string('utility_G_Mecanica');
+            $table->string('target_G_Mecanica');
+            $table->integer('id_G_Dinamica');
             $table->timestamps();
+
+            $foreign('id_G_Dinamica')->references('id_G_Dinamica')
+            ->on('g_dinamica');
         });
     }
 

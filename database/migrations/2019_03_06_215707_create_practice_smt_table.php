@@ -14,7 +14,7 @@ class CreatePracticeSmtTable extends Migration
     public function up()
     {
         Schema::create('practice_smt', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id_Practice_Smt');
             $table->timestamps();
         });
     }

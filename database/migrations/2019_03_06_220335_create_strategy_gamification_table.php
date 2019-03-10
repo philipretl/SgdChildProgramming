@@ -14,8 +14,14 @@ class CreateStrategyGamificationTable extends Migration
     public function up()
     {
         Schema::create('strategy_gamification', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id_Strategy_Gamification');
+            $table->string('name_Strategy_Gamification');
+            $table->string('description_Strategy_Gamification');
+            $table->string('targe_Strategy_Gamification');
+            $table->integer('id_G_Mentor_Task')->unsigned();
             $table->timestamps();
+
+            $table->foreign('id_G_Mentor_Task')->references('id_G_Mentor_Task')->on('g_mentor_task');
         });
     }
 

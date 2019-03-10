@@ -14,8 +14,14 @@ class CreateConceptTable extends Migration
     public function up()
     {
         Schema::create('concept', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id_Concept');
+            $table->string('description_Concept')->nullable();
+            $table->string('name_Concept');
+            $table->string('note_Concept')->nullable();
+            $table->integer('id_Child_Let_Task')->unsigned();
             $table->timestamps();
+
+            $table->foreign('id_Child_Let_Task')->references('id_Child_Let_Task')->on('child_let_task');
         });
     }
 

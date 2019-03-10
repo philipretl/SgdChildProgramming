@@ -14,7 +14,7 @@ class CreateElementSmtTable extends Migration
     public function up()
     {
         Schema::create('element_smt', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id_Element_Smt');
             $table->timestamps();
         });
     }

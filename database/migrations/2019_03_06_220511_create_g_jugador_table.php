@@ -14,8 +14,17 @@ class CreateGJugadorTable extends Migration
     public function up()
     {
         Schema::create('g_jugador', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id_G_Jugador');
+            $table->enum('type_G_Jugador',
+            ['explorador','triunfador','socializador','asesino'])->nullable();
+            $table->integer('id_Child')->unsigned();
+            $table->integer('id_Strategy_Gamification')->unsigned();
             $table->timestamps();
+
+            $table->foreign('id_Child')->references('id_Child')->on('child');
+            $table->foreign('id_Strategy_Gamification')->references
+            ('id_Strategy_Gamification')->on('strategy_gamification');
+
         });
     }
 

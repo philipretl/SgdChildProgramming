@@ -14,7 +14,11 @@ class CreateGDinamicaTable extends Migration
     public function up()
     {
         Schema::create('g_dinamica', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id_G_Dinamica');
+            $table->string('name_G_Dinamica');
+            $table->string('description_G_Dinamica');
+            $table->string('utility_G_Dinamica');
+            $table->string('target_G_Dinamica');
             $table->timestamps();
         });
     }
