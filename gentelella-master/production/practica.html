@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>SGD Childprogramming| </title>
+    <title>SGD Childprogramming | </title>
 
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -16,8 +16,16 @@
     <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
     <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
-    
-    <!-- Custom styling plus plugins -->
+    <!-- iCheck -->
+    <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <!-- bootstrap-progressbar -->
+    <link href="../vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <!-- PNotify -->
+    <link href="../vendors/pnotify/dist/pnotify.css" rel="stylesheet">
+    <link href="../vendors/pnotify/dist/pnotify.buttons.css" rel="stylesheet">
+    <link href="../vendors/pnotify/dist/pnotify.nonblock.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.css" rel="stylesheet">
   </head>
 
@@ -49,14 +57,13 @@
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
-                <h3>Menu</h3>
+                <h3>General</h3>
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-home"></i> Mis practicas <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="media_gallery.html">Todas</a></li>
                     </ul>
                   </li>
-				  
                   <li><a><i class="fa fa-edit"></i> Crear practicas <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="form_wizards.html">Iniciar</a></li>
@@ -231,7 +238,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3> Mis practicas  <small> </small> </h3>
+                <h3>Practica #</h3>
               </div>
 
               <div class="title_right">
@@ -239,7 +246,7 @@
                   <div class="input-group">
                     <input type="text" class="form-control" placeholder="Search for...">
                     <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">Go!</button>
+                      <button class="btn btn-default" type="button">Go!</button>
                     </span>
                   </div>
                 </div>
@@ -248,11 +255,11 @@
 
             <div class="clearfix"></div>
 
-            <div class="row">
+            <div class="">
               <div class="col-md-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2> Creadas <small>  </small></h2>
+                    <h2><i class="fa fa-bars"></i> Opciones <small></small></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -272,99 +279,38 @@
                   </div>
                   <div class="x_content">
 
-                    <div class="row">
 
-                      <p>A continuación podrá visualizar, editar o eliminar las prácticas creadas </p>
-
-                      <div class="col-md-55">
-                        <div class="thumbnail">
-                          <div class="image view view-first">
-                            <img style="width: 100%; display: block;" src="images/media.jpg" alt="image" />
-                            <div class="mask">
-                              <p>Practica 1</p>
-                              <div class="tools tools-bottom">
-                                <a href="practica.html"><i class="fa fa-eye"></i></a>
-                                <a href="#"><i class="fa fa-pencil"></i></a>
-                                <a href="#"><i class="fa fa-times"></i></a>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="caption">
-                            <p>Colegio:
-							   Curso: 
-							   Metodologias: 
-							</p>
-                          </div>
+                    <div class="" role="tabpanel" data-example-id="togglable-tabs">
+                      <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Informacion general</a>
+                        </li>
+                        <li role="presentation" class=""><a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Equipo</a>
+                        </li>
+                        <li role="presentation" class=""><a href="#tab_content3" role="tab" id="profile-tab2" data-toggle="tab" aria-expanded="false">Actividades</a>
+                        </li>
+                      </ul>
+                      <div id="myTabContent" class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
+                          <p>- Facilitador
+							 -Meta
+							 -Descripcion
+							 -Metodologias usadas
+						  </p>
                         </div>
-                      </div>
-                      <div class="col-md-55">
-                        <div class="thumbnail">
-                          <div class="image view view-first">
-                            <img style="width: 100%; display: block;" src="images/media.jpg" alt="image" />
-                            <div class="mask">
-                              <p>Practica 1</p>
-                              <div class="tools tools-bottom">
-                                <a href="practica.html"><i class="fa fa-eye"></i></a>
-                                <a href="#"><i class="fa fa-pencil"></i></a>
-                                <a href="#"><i class="fa fa-times"></i></a>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="caption">
-                            <p>Colegio:
-							   Curso: 
-							   Metodologias: 
-							</p>
-                          </div>
+                        <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
+                          <p>Integrantes </p>
                         </div>
-                      </div>
-                      <div class="col-md-55">
-                        <div class="thumbnail">
-                          <div class="image view view-first">
-                            <img style="width: 100%; display: block;" src="images/media.jpg" alt="image" />
-                            <div class="mask">
-                              <p>Practica 1</p>
-                              <div class="tools tools-bottom">
-                                <a href="practica.html"><i class="fa fa-eye"></i></a>
-                                <a href="#"><i class="fa fa-pencil"></i></a>
-                                <a href="#"><i class="fa fa-times"></i></a>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="caption">
-                            <p>Colegio:
-							   Curso: 
-							   Metodologias: 
-							</p>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <div class="col-md-55">
-                        <div class="thumbnail">
-                          <div class="image view view-first">
-                            <img style="width: 100%; display: block;" src="images/media.jpg" alt="image" />
-                            <div class="mask no-caption">
-                              <div class="tools tools-bottom">
-                                <a href="#"><i class="fa fa-eye"></i></a>
-                                <a href="#"><i class="fa fa-pencil"></i></a>
-                                <a href="#"><i class="fa fa-times"></i></a>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="caption">
-                            <p><strong>Image Name</strong>
-                            </p>
-                            <p>Snow and Ice Incoming</p>
-                          </div>
+                        <div role="tabpanel" class="tab-pane fade" id="tab_content3" aria-labelledby="profile-tab">
+                          <p>Plan de trabajo </p>
                         </div>
                       </div>
                     </div>
+
                   </div>
                 </div>
               </div>
-            </div>
           </div>
+          <div class="clearfix"></div>
         </div>
         <!-- /page content -->
 
@@ -379,6 +325,13 @@
       </div>
     </div>
 
+    <div id="custom_notifications" class="custom-notifications dsp_none">
+      <ul class="list-unstyled notifications clearfix" data-tabbed_notifications="notif-group">
+      </ul>
+      <div class="clearfix"></div>
+      <div id="notif-group" class="tabbed_notifications"></div>
+    </div>
+
     <!-- jQuery -->
     <script src="../vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
@@ -387,8 +340,17 @@
     <script src="../vendors/fastclick/lib/fastclick.js"></script>
     <!-- NProgress -->
     <script src="../vendors/nprogress/nprogress.js"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="../vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <!-- iCheck -->
+    <script src="../vendors/iCheck/icheck.min.js"></script>
+    <!-- PNotify -->
+    <script src="../vendors/pnotify/dist/pnotify.js"></script>
+    <script src="../vendors/pnotify/dist/pnotify.buttons.js"></script>
+    <script src="../vendors/pnotify/dist/pnotify.nonblock.js"></script>
 
     <!-- Custom Theme Scripts -->
     <script src="../build/js/custom.min.js"></script>
+	
   </body>
 </html>
