@@ -15,7 +15,13 @@ class CreateDimensionTable extends Migration
     {
         Schema::create('dimension', function (Blueprint $table) {
             $table->increments('id_Dimension');
+            $table->string('description_Dimension');
+            $table->string('concept_Gender_Dimension');
+            $table->integer('id_Child_Let_Task')->unsigned();
             $table->timestamps();
+
+            $table->foreign('id_Child_Let_Task')->references('id_Child_Let_Task')
+            ->on('child_let_task');
         });
     }
 
