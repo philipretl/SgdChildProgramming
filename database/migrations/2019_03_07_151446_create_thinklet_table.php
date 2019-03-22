@@ -25,6 +25,7 @@ class CreateThinkletTable extends Migration
 
             $table->foreign('id_Collaborative_Process')
             ->references('id_Collaborative_Process')->on('collaborative_process');
+
         });
     }
 

@@ -32,7 +32,11 @@ class Collaborative_Process extends Model
       return $this->hasMany('App\G_Mentor_Task');
     }
 
-    
+    public function thinklet(){
+      return $this->hasMany('App\Thinklet');
+    }
+
+
 
 
 }

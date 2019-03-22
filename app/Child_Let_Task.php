@@ -18,4 +18,14 @@ class Child_Let_Task extends Model
         'id_Collaborative_Process','id_Child_Let_Task');
 
     }
+
+    public function dimension(){
+      return $this->hasMany('App\Dimension');
+    }
+
+    public function concept(){
+      return $this->hasMany('App\Concept');
+    }
+
+    
 }
