@@ -27,4 +27,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function collaborative_process(){
+      return $this->hasMany('App\Collaborative_Process');
+    }
+
+    public function institutions(){
+      return $this->hasMany('App\Institution');
+    }
 }

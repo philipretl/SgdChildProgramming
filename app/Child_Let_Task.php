@@ -18,12 +18,24 @@ class Child_Let_Task extends Model
 
     }
 
-    public function dimension(){
+    public function dimensions(){
       return $this->hasMany('App\Dimension');
     }
 
-    public function concept(){
+    public function concepts(){
       return $this->hasMany('App\Concept');
+    }
+
+    public function practices_gender(){
+      return $this->hasMany('App\Practice_Gender');
+    }
+
+    public function practices(){
+      return $this->hasMany('App\Practce');
+    }
+
+    public function practices_smt(){
+      return $this->hasMany('App\Practice_Smt');
     }
 
 

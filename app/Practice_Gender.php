@@ -13,15 +13,17 @@ class Practice_Gender extends Model
     'indicators_Problem_Practice_Gender','id_Child_Let_Task'];
     protected $primary_key='id_Practice_Gender';
 
-public function dimension_gender(){
-  return $this->hasOne('App,Dimendion_Gender');
+  public function dimension_gender(){
+    return $this->hasOne('App,Dimendion_Gender');
 
-}
+  }
 
-public function child_Let_Task(){
-  return $this->belongsTo('App\Child_Let_Task', 'id_Child_Let_Task',
-  'id_Practice_Gender');
-}
+  public function child_Let_Task(){
+    return $this->belongsTo('App\Child_Let_Task', 'id_Child_Let_Task',
+    'id_Practice_Gender');
+  }
+
+  
 
 
 

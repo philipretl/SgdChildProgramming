@@ -16,4 +16,6 @@ class Collaborative_Patterns extends Model
     public function thinklet(){
       return $this->belongsTo('App\Thinklet', 'id_Thinklet', 'id_Collaborative_Patterns');
     }
+
+
 }

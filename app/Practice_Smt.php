@@ -16,4 +16,8 @@ class Practice_Smt extends Model
     public function elements_smt(){
       return $this->hasMany('App\Element_Smt');
     }
+
+    public function child_let_task(){
+      return $this->belongsTo('App\Child_Let_Task','id_Child_Let_Task','id_Practice_Smt');
+    }
 }

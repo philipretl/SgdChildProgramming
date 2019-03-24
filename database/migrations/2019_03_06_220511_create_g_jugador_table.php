@@ -17,6 +17,7 @@ class CreateGJugadorTable extends Migration
             $table->increments('id_G_Jugador');
             $table->enum('type_G_Jugador',
             ['explorador','triunfador','socializador','asesino'])->nullable();
+            $table->string('description_G_Jugador');
             $table->integer('id_Child')->unsigned();
             $table->integer('id_Strategy_Gamification')->unsigned();
             $table->timestamps();

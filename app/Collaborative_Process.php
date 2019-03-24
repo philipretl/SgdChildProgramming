@@ -16,11 +16,11 @@ class Collaborative_Process extends Model
       return $this->belongsTo('App\User', 'id_User', 'id_Collaborative_Process');
     }
 
-    public function child_let_task(){
+    public function child_let_tasks(){
       return $this->hasMany('App\Child_Let_Task');
     }
 
-    public function facilitator(){
+    public function facilitators(){
       return $this->hasMany('App\Facilitator');
     }
 
@@ -28,13 +28,14 @@ class Collaborative_Process extends Model
       return $this->hasOne('App\Team');
     }
 
-    public function g_mentor_task(){
+    public function g_mentor_tasks(){
       return $this->hasMany('App\G_Mentor_Task');
     }
 
-    public function thinklet(){
+    public function thinklets(){
       return $this->hasMany('App\Thinklet');
     }
+
 
 
 

@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->enum('confirmate_User',['true','false'])->nullable()->default('true');
             $table->string('code_Confirmation_User')->nullable()->unique();
             $table->enum('type_User',['tutor_User', 'admin_User' ])->default('tutor_User');
+            $table->string('imagen_User');
             $table->rememberToken();
             $table->timestamps();
 

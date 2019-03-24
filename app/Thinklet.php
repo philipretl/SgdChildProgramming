@@ -12,4 +12,9 @@ class Thinklet extends Model
     'outputs_Thinklet','steps_Thinklet','id_Collaborative_Process'];
     protected $primary_key='id_Thinklet';
 
+    public function collaborative_patterns(){
+        return $this->hasMany('App\Collaborative_Patterns');
+
+    }
+
 }

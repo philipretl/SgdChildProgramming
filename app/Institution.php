@@ -7,17 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 class Institution extends Model
 {
     //
-    protected $table="institution";
-    protected $fillable=["id_Institution","name_Institution","address_Institution",
-    "phone_Institution","code_Institution"];
-    protected $primary_key="";
+    protected $table='institution';
+    protected $fillable=['name_Institution','address_Institution',
+    'phone_Institution','code_Institution','id_User'];
+    protected $primary_key='id_Institution';
 
 
     public function childs(){
       return $this->hasMany('App\Child');
     }
 
-    public function users(){
-      return $this->hasMany('App\User');
+    public function user(){
+      return $this->belongsTo('App\User', 'id_User', 'id_Institution');
     }
 }

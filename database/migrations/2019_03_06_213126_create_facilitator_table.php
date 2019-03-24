@@ -16,6 +16,7 @@ class CreateFacilitatorTable extends Migration
         Schema::create('facilitator', function (Blueprint $table) {
             $table->increments('id_Facilitator');
             $table->string('description_Facilitator');
+            $table->string('name_Facilitator');
             $table->integer('id_Collaborative_Process')->unsigned();
             $table->timestamps();
 

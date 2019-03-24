@@ -19,11 +19,18 @@ class CreateChildTable extends Migration
             $table->string('grade_Child');
             $table->integer('age_Child');
             $table->integer('id_Institution')->unsigned()->nullable();
+            $table->timestamps();
+            $table->foreign('id_Institution')->references('id_Institution')->on('institution');
+
+        });
+        Schema::create('child_team', function (Blueprint $table) {
+            $table->increments('id_Child_Team');
+            $table->integer('id_Child')->unsigned();
             $table->integer('id_Team')->unsigned();
             $table->timestamps();
 
             $table->foreign('id_Team')->references('id_Team')->on('team')->onDelete('cascade');
-            $table->foreign('id_Institution')->references('id_Institution')->on('institution');
+            $table->foreign('id_Child')->references('id_Child')->on('child');
 
         });
     }
@@ -36,5 +43,6 @@ class CreateChildTable extends Migration
     public function down()
     {
         Schema::dropIfExists('child');
+        Schema::dropIfExists('child_team');
     }
 }
