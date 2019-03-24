@@ -8,7 +8,7 @@ class Collaborative_Process extends Model
 {
     //
     protected $table='collaborative_process';
-    protected $fillable=['id_Collaborative_Process', 'name_Collaborative_Process',
+    protected $fillable=['name_Collaborative_Process',
     'goal_Collaborative_Process', 'id_User'];
     protected $primary_key='id_Collaborative_Process';
 
@@ -17,7 +17,7 @@ class Collaborative_Process extends Model
     }
 
     public function child_let_task(){
-      return $this->hasMany('App\Child_Let_Task','id_Collaborative_Process');
+      return $this->hasMany('App\Child_Let_Task');
     }
 
     public function facilitator(){

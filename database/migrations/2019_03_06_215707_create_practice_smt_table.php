@@ -16,7 +16,12 @@ class CreatePracticeSmtTable extends Migration
         Schema::create('practice_smt', function (Blueprint $table) {
             $table->increments('id_Practice_Smt');
             $table->string('description_Practice_Smt')->nullable();
+            $table->string('inputs_Practice_Smt');
+            $table->string('outputs_Practice_Smt');
+            $table->integer('id_Child_Let_Task')->unsigned();
             $table->timestamps();
+
+            $table->foreign('id_Child_Let_Task')->references('id_Child_Let_Task')->on('child_let_task');
         });
     }
 

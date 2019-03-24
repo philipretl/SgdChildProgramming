@@ -8,7 +8,7 @@ class Concept extends Model
 {
     //
     public $table='concept';
-    public $fillable= ['id_Concept', 'description_Concept', 'name_Concept',
+    public $fillable= ['description_Concept', 'name_Concept',
     'note_Concept','id_Child_Let_Task'];
     public $primary_key='id_Concept';
 

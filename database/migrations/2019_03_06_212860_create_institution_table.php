@@ -18,8 +18,11 @@ class CreateInstitutionTable extends Migration
             $table->string('name_Institution');
             $table->string('address_Institution')->nullable();
             $table->string('phone_Institution')->nullable();
-            $table->string('code_Institution')->nullable();  
+            $table->string('code_Institution')->nullable();
+            $table->integer('id_User')->unsigned();
             $table->timestamps();
+
+            $table->foreign('id_User')->references('id_User')->on('users');
         });
     }
 

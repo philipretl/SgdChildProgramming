@@ -8,8 +8,7 @@ class Abstraction_Mechanism extends Model
 {
     //
     protected $table='abstraction_mechanism';
-    protected $fillable=['id_Abstraction_Mechanism', 'description_Abstraction_Mechanism',
-    'id_Practice'];
+    protected $fillable=['description_Abstraction_Mechanism','id_Practice'];
     protected $primary_key='id_Abstraction_Mechanism';
 
     public function practice(){

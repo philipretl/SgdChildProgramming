@@ -19,6 +19,8 @@ class CreatePracticeGenderTable extends Migration
             $table->string('description_Practice_Gender');
             $table->string('inputs_Practice_Gender');
             $table->string('outputs_Practice_Gender');
+            $table->string('orientation_Practice_Gender');
+            $table->string('indicators_Problem_Practice_Gender');
             $table->integer('id_Child_Let_Task')->unsigned();
             $table->timestamps();
 

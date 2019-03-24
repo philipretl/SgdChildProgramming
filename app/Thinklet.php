@@ -7,4 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Thinklet extends Model
 {
     //
+    protected $table='thinklet';
+    protected $fillable=['name_Thinklet', 'description_Thinklet', 'inputs_Thinklet',
+    'outputs_Thinklet','steps_Thinklet','id_Collaborative_Process'];
+    protected $primary_key='id_Thinklet';
+
 }

@@ -17,16 +17,14 @@ class CreateUsersTable extends Migration
             $table->increments('id_User');
             $table->string('name_User');
             $table->string('email_User')->unique();
-            $table->string('password_User');
+            $table->string('password');
             $table->string('phone_User');
-            $table->enum('confirmate_User',['true','false'])->nullable()->default('false');
+            $table->enum('confirmate_User',['true','false'])->nullable()->default('true');
             $table->string('code_Confirmation_User')->nullable()->unique();
             $table->enum('type_User',['tutor_User', 'admin_User' ])->default('tutor_User');
-            $table->integer('id_Institution')->unsigned()->nullable();
             $table->rememberToken();
             $table->timestamps();
 
-            $table->foreign('id_Institution')->references('id_Institution')->on('institution');
         });
     }
 

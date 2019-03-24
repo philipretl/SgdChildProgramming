@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDimensionTable extends Migration
+class CreateDimensionGenderTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,18 @@ class CreateDimensionTable extends Migration
      */
     public function up()
     {
-        Schema::create('dimension', function (Blueprint $table) {
-            $table->increments('id_Dimension');
-            $table->string('description_Dimension');
-            $table->string('concept_Gender_Dimension');
+        Schema::create('dimension_gender', function (Blueprint $table) {
+            $table->increments('id_Dimension_Gender');
+            $table->string('description_Dimension_Gender');
+            $table->string('concept_Gender_Dimension_Gender');
             $table->integer('id_Child_Let_Task')->unsigned();
+            $table->integer('id_Practice_Gender')->unsigned();
             $table->timestamps();
 
             $table->foreign('id_Child_Let_Task')->references('id_Child_Let_Task')
             ->on('child_let_task');
+            $table->foreign('id_Practice_Gender')->references('id_Practice_Gender')
+            ->on('practice_gender');
         });
     }
 

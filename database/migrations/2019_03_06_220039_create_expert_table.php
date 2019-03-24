@@ -16,6 +16,7 @@ class CreateExpertTable extends Migration
         Schema::create('expert', function (Blueprint $table) {
             $table->increments('id_Expert');
             $table->integer('id_Child')->unsigned();
+            $table->string('description_Expert')->nullable();
             $table->timestamps();
 
             $table->foreign('id_Child')->references('id_Child')->on('child');
