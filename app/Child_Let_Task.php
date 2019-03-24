@@ -38,5 +38,8 @@ class Child_Let_Task extends Model
       return $this->hasMany('App\Practice_Smt');
     }
 
+    public function roles(){
+      return $this->hasMany('App\Role');
+    }
 
 }

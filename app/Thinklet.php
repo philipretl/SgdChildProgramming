@@ -17,4 +17,8 @@ class Thinklet extends Model
 
     }
 
+    public function collaborative_process(){
+      return $this->belongsTo('App\Collaborative_Process', 'id_Collaborative_Process');
+    }
+
 }

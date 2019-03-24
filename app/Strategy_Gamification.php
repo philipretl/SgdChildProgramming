@@ -20,4 +20,8 @@ class Strategy_Gamification extends Model
     public function g_jugadores(){
       return $this->hasMany('App\G_Jugador');
     }
+
+    public function g_dinamicas(){
+      return $this->hasMany('App\G_Dinamica');
+    }
 }

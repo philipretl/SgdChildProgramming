@@ -20,7 +20,4 @@ class Practice extends Model
       return $this->hasMany('App\Abstraction_Mechanism');
     }
 
-    public function role(){
-      return $this->hasMany('App\Role');
-    }
 }
