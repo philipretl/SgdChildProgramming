@@ -13,11 +13,12 @@
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('/');
 
-Route::group(['prefix'=>'/usuario','middleware' => ['auth','confirmar']],function(){
-
-
+Route::group(['prefix'=>'/sgd'],function(){
+  Route::get('/practcas', function(){
+    return view('tutor.practicas');
+  })->name('practicas');
 
 
 });
