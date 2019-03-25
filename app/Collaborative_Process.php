@@ -9,7 +9,7 @@ class Collaborative_Process extends Model
     //
     protected $table='collaborative_process';
     protected $fillable=['name_Collaborative_Process',
-    'goal_Collaborative_Process', 'id_User'];
+    'goal_Collaborative_Process', 'id_User', 'id_Institution'];
     protected $primary_key='id_Collaborative_Process';
 
     public function user(){
@@ -36,8 +36,10 @@ class Collaborative_Process extends Model
       return $this->hasMany('App\Thinklet');
     }
 
-
-
+    public function institution(){
+      return $this->belongsTo('App\Institution', 'id_Institution',
+      'id_Collaborative_Process');
+    }
 
 
 }

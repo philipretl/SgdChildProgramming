@@ -22,6 +22,10 @@ class Institution extends Model
     }
 
     public function grades(){
-      return $this->hasMany('App\Grade'); 
+      return $this->hasMany('App\Grade');
+    }
+
+    public function collaborative_process(){
+      return $this->hasMany('App\Collaborative_Process');
     }
 }

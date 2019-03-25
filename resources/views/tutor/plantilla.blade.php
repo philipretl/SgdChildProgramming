@@ -11,14 +11,14 @@
     <title>SGD Childprogramming| </title>
 
     <!-- Bootstrap -->
-    <link href="../sgd/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{asset('/sgd/vendors/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="../sgd/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{{asset('/sgd/vendors/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
     <!-- NProgress -->
-    <link href="../sgd/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <link href="{{asset('/sgd/vendors/nprogress/nprogress.css')}}" rel="stylesheet">
 
     <!-- Custom styling plus plugins -->
-    <link href="../sgd/build/css/custom.min.css" rel="stylesheet">
+    <link href="{{asset('/sgd/build/css/custom.min.css')}}" rel="stylesheet">
   </head>
 
   <body class="nav-md">
@@ -39,7 +39,7 @@
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="images/user.png" alt="..." class="img-circle profile_img">
+                <img src="{{asset('sgd/images/user.png')}}" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
                 <span>Bienvenido,</span>
@@ -111,15 +111,15 @@
     </div>
 
     <!-- jQuery -->
-    <script src="../sgd/vendors/jquery/dist/jquery.min.js"></script>
+    <script src="{{asset('/sgd/vendors/jquery/dist/jquery.min.js')}}"></script>
     <!-- Bootstrap -->
-    <script src="../sgd/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="{{asset('/sgd/vendors/bootstrap/dist/js/bootstrap.min.js')}}"></script>
     <!-- FastClick -->
-    <script src="../sgd/vendors/fastclick/lib/fastclick.js"></script>
+    <script src="{{asset('/sgd/vendors/fastclick/lib/fastclick.js')}}"></script>
     <!-- NProgress -->
-    <script src="../sgd/vendors/nprogress/nprogress.js"></script>
+    <script src="{{asset('/sgd/vendors/nprogress/nprogress.js')}}"></script>
 
     <!-- Custom Theme Scripts -->
-    <script src="../sgd/build/js/custom.min.js"></script>
+    <script src="{{asset('/sgd/build/js/custom.min.js')}}"></script>
   </body>
 </html>

@@ -21,27 +21,31 @@
 
             <p>A continuación podrá visualizar, editar o eliminar las prácticas creadas </p>
 
-            <div class="col-md-55">
-              <div class="thumbnail">
-                <div class="image view view-first">
-                  <img style="width: 100%; display: block;" src="images/media.jpg" alt="image" />
-                  <div class="mask">
-                    <p>Practica 1</p>
-                    <div class="tools tools-bottom">
-                      <a href="practica.html"><i class="fa fa-eye"></i></a>
-                      <a href="#"><i class="fa fa-pencil"></i></a>
-                      <a href="#"><i class="fa fa-times"></i></a>
+            @foreach ($collaborative_Process as $c_b)
+              <div class="col-md-55">
+                <div class="thumbnail">
+                  <div class="image view view-first">
+                    <img style="width: 100%; display: block;" src="images/media.jpg" alt="image" />
+                    <div class="mask">
+                      <p>Practica {{$c_b->id_Collaborative_Process}}</p>
+                      <div class="tools tools-bottom">
+                        <a href="practica.html"><i class="fa fa-eye"></i></a>
+                        <a href="#"><i class="fa fa-pencil"></i></a>
+                        <a href="#"><i class="fa fa-times"></i></a>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="caption">
-                  <p>Colegio:
-                     Curso:
-                     Metodologias:
-                  </p>
+                  <div class="caption">
+                    <p>{{$c_b->name_Collaborative_Process}}</p>
+                    <p>meta: {{$c_b->goal_Collaborative_Process}}</p>
+                  </div>
+
                 </div>
               </div>
-            </div>
+            @endforeach
+
+
+
           </div>
         </div>
       </div>

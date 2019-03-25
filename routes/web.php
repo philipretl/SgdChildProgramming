@@ -11,14 +11,25 @@
 |
 */
 
+
+Route::get('/pruebaD', function () {
+    return view('tutor.instituciones');
+})->name('/pruebaD');
+
+Route::get('/pruebaM', function () {
+    return view('tutor.instituciones');
+})->name('/pruebaM');
+
+
+
+
 Route::get('/', function () {
     return view('index');
 })->name('/');
 
-Route::group(['prefix'=>'/sgd'],function(){
-  Route::get('/practcas', function(){
-    return view('tutor.practicas');
-  })->name('practicas');
+Route::prefix('/sgd')->group(function(){
 
+
+  Route::get('/practicas','User\FlavorController@index')->name('practicas');
 
 });

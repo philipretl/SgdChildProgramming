@@ -18,9 +18,11 @@ class CreateCollaborativeProcessTable extends Migration
             $table->string('name_Collaborative_Process');
             $table->string('goal_Collaborative_Process');
             $table->integer('id_User')->unsigned();
+            $table->integer('id_Institution')->unsigned()->nullable();
             $table->timestamps();
 
             $table->foreign('id_User')->references('id_User')->on('users')->onDelete('cascade');
+            $table->foreign('id_Institution')->references('id_Institution')->on('institution');
         });
     }
 
