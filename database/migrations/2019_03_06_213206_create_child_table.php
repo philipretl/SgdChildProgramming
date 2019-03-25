@@ -16,7 +16,6 @@ class CreateChildTable extends Migration
         Schema::create('child', function (Blueprint $table) {
             $table->increments('id_Child');
             $table->string('name_Child');
-            $table->string('grade_Child');
             $table->integer('age_Child');
             $table->integer('id_Institution')->unsigned()->nullable();
             $table->timestamps();
