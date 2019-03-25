@@ -8,7 +8,7 @@ class Child extends Model
 {
     //
     protected $table='child';
-    protected $fillable=['name_Child', 'grade_Child', 'age_Child', 'id_Institution'];
+    protected $fillable=['name_Child', 'grade_Child', 'age_Child', 'id_Institution','id_Grade'];
     protected $primary_key='id_Child';
 
     public function institution(){
@@ -25,5 +25,9 @@ class Child extends Model
 
     public function g_jugador(){
       return $this->hasOne('App\G_Jugador');
+    }
+
+    public function grade(){
+      return $this->belongsTo('App\Grade', 'id_Grade', 'id_Child');
     }
 }

@@ -18,9 +18,11 @@ class CreateChildTable extends Migration
             $table->string('name_Child');
             $table->integer('age_Child');
             $table->integer('id_Institution')->unsigned()->nullable();
+            $table->integer('id_Grade')->unsigned();
             $table->timestamps();
-            $table->foreign('id_Institution')->references('id_Institution')->on('institution');
 
+            $table->foreign('id_Grade')->references('id_Grade')->on('grade');   
+            $table->foreign('id_Institution')->references('id_Institution')->on('institution');
         });
         Schema::create('child_team', function (Blueprint $table) {
             $table->increments('id_Child_Team');

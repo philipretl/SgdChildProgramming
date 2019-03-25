@@ -20,4 +20,8 @@ class Institution extends Model
     public function user(){
       return $this->belongsTo('App\User', 'id_User', 'id_Institution');
     }
+
+    public function grades(){
+      return $this->hasMany('App\Grade'); 
+    }
 }
