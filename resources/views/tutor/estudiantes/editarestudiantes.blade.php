@@ -65,14 +65,14 @@
             </div>
                 <div class="x_content">
                   <br/>
-                  <form action="{{route('salvarestudiante')}}" method="POST" id="form_x" data-parsley-validate class="form-horizontal form-label-left">
-                      {{ csrf_field() }}
+                  <form action="{{route('actualizarestudiante',[$child])}}" method="PUT" id="form_x" data-parsley-validate class="form-horizontal form-label-left">
+                     {{ csrf_field() }}
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name_Child">Nombre
                           <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="name_Child" name="name_Child" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="name_Child" name="name_Child" value="{{$child->name_Child}}" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
 
@@ -81,7 +81,7 @@
                         <span class="required">*</span>
                       </label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input type="text" id="age_Child" name="age_Child" required="required" class="form-control col-md-7 col-xs-12">
+                        <input type="text" id="age_Child" name="age_Child" value="{{$child->age_Child}}" required="required" class="form-control col-md-7 col-xs-12">
                       </div>
                     </div>
 
@@ -90,22 +90,22 @@
                         <span class="required">*</span>
                       </label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input type="text" id="student_Code_Child" name="student_Code_Child" required="required" class="form-control col-md-7 col-xs-12">
+                        <input type="text" id="student_Code_Child" value="{{$child->student_Code_Child}}" name="student_Code_Child" required="required" class="form-control col-md-7 col-xs-12">
                       </div>
                     </div>
 
                     <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Institución<span class="required">*</span></label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          {!! Form::select('id_Institution',$institutions,null,['id'=>'institution','class' => 'form-control select-institution',
-                              'placeholder' => 'Seleccione una Institucion'])!!}
+                          {!! Form::select('id_Institution',$institutions,$child->institution->id_Institution,['id'=>'institution','class' => 'form-control select-institution',
+                              'placeholder' => 'Seleccione una Institucion','required'])!!}
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Curso</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           {!! Form::label('id_Grade', 'Grados', ['class' => 'bmd-label-floating'])!!}
-                          {!! Form::select('id_Grade',[],null,['id'=>'grade', 'class' => 'form-control '])!!}
+                          {!! Form::select('id_Grade',$grades,$child->grade->id_Grade,['id'=>'grade', 'class' => 'form-control ','required'])!!}
 					            	</div>
                     </div>
 
@@ -113,7 +113,7 @@
                     <div class="form-group">
                       <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
 
-                        <button type="agregar" class="btn btn-success">Agregar</button>
+                        <button type="agregar" class="btn btn-success">Actualizar</button>
                       </div>
                     </div>
                   </form>
@@ -132,7 +132,7 @@
     $("#institution").change(function(event){
 
 
-      $.get("../sgd/getgrado/"+event.target.value+"",function(response,state){
+      $.get("../getgrado/"+event.target.value+"",function(response,state){
          console.log(response);
           $("#grade").empty();
 

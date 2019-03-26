@@ -8,6 +8,7 @@ use Laracasts\Flash\Flash;
 use App\Child;
 use App\Institution;
 use App\User;
+use App\Grade;
 
 
 class ChildController extends Controller
@@ -39,8 +40,18 @@ class ChildController extends Controller
 
     public function edit($id){
         $child = Child::find($id);
-        //dd($institution);
-        return view('tutor.estudiantes.editarestudiantes')->with('child',$child);
+        //$user = User::find(auth()->user()->id);
+        $user = User::where('id_User',1)->first();
+        $institutions = Institution::select('name_Institution','id_Institution')
+        ->where('id_User',$user->id_User)->pluck('name_Institution','id_Institution');
+        //dd($child->institution);
+
+        $grades = Grade::select('name_Grade','id_Grade')->where('id_Institution',
+        $child->institution->id_Institution)->pluck('name_Grade','id_Grade');
+
+        return view('tutor.estudiantes.editarestudiantes')->with('child',$child)
+        ->with('institutions',$institutions)->with('grades',$grades);
+
     }
 
     public function update(Request $request,$id){
