@@ -22,9 +22,9 @@ class CreateGJugadorTable extends Migration
             $table->integer('id_Strategy_Gamification')->unsigned();
             $table->timestamps();
 
-            $table->foreign('id_Child')->references('id_Child')->on('child');
+            $table->foreign('id_Child')->references('id_Child')->on('child')->onDelete('cascade');
             $table->foreign('id_Strategy_Gamification')->references
-            ('id_Strategy_Gamification')->on('strategy_gamification');
+            ('id_Strategy_Gamification')->on('strategy_gamification')->onDelete('cascade');
 
         });
     }

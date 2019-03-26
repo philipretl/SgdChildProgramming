@@ -8,11 +8,12 @@ class Child extends Model
 {
     //
     protected $table='child';
-    protected $fillable=['name_Child','age_Child', 'id_Institution','id_Grade'];
+    protected $fillable=['name_Child','age_Child',
+    'student_Code_Child', 'id_Institution','id_Grade'];
     protected $primaryKey='id_Child';
 
     public function institution(){
-      return $this->belongsTo('App\Institution', 'id_Institution', 'id_Child');
+      return $this->belongsTo('App\Institution', 'id_Institution');
     }
 
     public function team(){
@@ -28,6 +29,6 @@ class Child extends Model
     }
 
     public function grade(){
-      return $this->belongsTo('App\Grade', 'id_Grade', 'id_Child');
+      return $this->belongsTo('App\Grade', 'id_Grade');
     }
 }

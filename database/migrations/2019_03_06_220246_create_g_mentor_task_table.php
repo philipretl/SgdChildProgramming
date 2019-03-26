@@ -23,7 +23,8 @@ class CreateGMentorTaskTable extends Migration
             $table->integer('id_Collaborative_Process')->unsigned();
             $table->timestamps();
 
-            $table->foreign('id_Collaborative_Process')->references('id_Collaborative_Process')->on('collaborative_process');
+            $table->foreign('id_Collaborative_Process')->references('id_Collaborative_Process')
+            ->on('collaborative_process')->onDelete('cascade');
         });
     }
 

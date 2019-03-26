@@ -21,9 +21,9 @@ class CreateGDinamicaTable extends Migration
             $table->string('target_G_Dinamica');
             $table->integer('id_Strategy_Gamification')->unsigned();
             $table->timestamps();
-            
+
             $table->foreign('id_Strategy_Gamification')->references
-            ('id_Strategy_Gamification')->on('strategy_gamification');
+            ('id_Strategy_Gamification')->on('strategy_gamification')->onDelete('cascade');
         });
     }
 

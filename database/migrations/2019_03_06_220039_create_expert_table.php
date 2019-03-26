@@ -19,7 +19,7 @@ class CreateExpertTable extends Migration
             $table->string('description_Expert')->nullable();
             $table->timestamps();
 
-            $table->foreign('id_Child')->references('id_Child')->on('child');
+            $table->foreign('id_Child')->references('id_Child')->on('child')->onDelete('cascade');
         });
     }
 

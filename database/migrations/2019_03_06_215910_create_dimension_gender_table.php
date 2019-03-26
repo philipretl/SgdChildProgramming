@@ -22,9 +22,9 @@ class CreateDimensionGenderTable extends Migration
             $table->timestamps();
 
             $table->foreign('id_Child_Let_Task')->references('id_Child_Let_Task')
-            ->on('child_let_task');
+            ->on('child_let_task')->onDelete('cascade');
             $table->foreign('id_Practice_Gender')->references('id_Practice_Gender')
-            ->on('practice_gender');
+            ->on('practice_gender')->onDelete('cascade');
         });
     }
 

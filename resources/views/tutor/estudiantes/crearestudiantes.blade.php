@@ -65,24 +65,17 @@
             </div>
                 <div class="x_content">
                   <br/>
-                  <form id="form_x" data-parsley-validate class="form-horizontal form-label-left">
+                  <form action="{{route('salvarestudiante')}}" method="POST" id="form_x" data-parsley-validate class="form-horizontal form-label-left">
+                      {{ csrf_field() }}
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name_Child">Nombre
+                          <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="name_Child" name="name_Child" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
 
-                    <div class="form-group">
-                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name_Child">Nombre
-                        <span class="required">*</span>
-                      </label>
-                      <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input type="text" id="name_Child" required="required" class="form-control col-md-7 col-xs-12">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="grade_Child">Grado
-                        <span class="required">*</span>
-                      </label>
-                      <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input type="text" id="grade_Child" name="grade_Child" required="required" class="form-control col-md-7 col-xs-12">
-                      </div>
-                    </div>
                     <div class="form-group">
                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="age_Child">Edad
                         <span class="required">*</span>
@@ -93,33 +86,33 @@
                     </div>
 
                     <div class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="age_Child">Codigo Estudiantil
+                        <span class="required">*</span>
+                      </label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" id="student_Code_Child" name="student_Code_Child" required="required" class="form-control col-md-7 col-xs-12">
+                      </div>
+                    </div>
+
+                    <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Institución<span class="required">*</span></label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                            <select class="form-control">
-                              @foreach ($institutions as $institution)
-                                  <option value"{{$institution->id_Institution}}">{{$institution->name_Institution}}</option>
-                              @endforeach
-
-
-                            </select>
+                          {!! Form::select('id_Institution',$institutions,null,['id'=>'institution','class' => 'form-control select-institution',
+                              'placeholder' => 'Seleccione una Institucion'])!!}
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Curso</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                            <select class="form-control">
-                                <option>Elige ...</option>
-                                <option>Curso a</option>
-                                <option>Curso b</option>
-                                <option>Curso c</option>
-							</select>
-						</div>
+                          {!! Form::label('id_Grade', 'Grados', ['class' => 'bmd-label-floating'])!!}
+                          {!! Form::select('id_Grade',[],null,['id'=>'grade', 'class' => 'form-control '])!!}
+					            	</div>
                     </div>
 
                     <div class="ln_solid"></div>
                     <div class="form-group">
                       <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                        <button class="btn btn-primary" type="listar">Limpiar</button>
+
                         <button type="agregar" class="btn btn-success">Agregar</button>
                       </div>
                     </div>
@@ -132,4 +125,28 @@
         </div>
 
 <!-- /page content -->
+@endsection
+
+@section('js')
+  <script type="text/javascript">
+    $("#institution").change(function(event){
+
+
+      $.get("../sgd/getgrado/"+event.target.value+"",function(response,state){
+         console.log(response);
+          $("#grade").empty();
+
+          $("#grade").append('<option value="">Seleccione un grado</option>');
+          for (i = 0; i < response.length; i++) {
+
+
+            $("#grade").append("<option value='"+response[i].id_Grade+"'>"
+            + response[i].name_Grade  + "</option>");
+          }
+            $("#grade").trigger('chosen:updated');
+      });
+
+    });
+  </script>
+
 @endsection

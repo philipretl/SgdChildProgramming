@@ -22,7 +22,7 @@ class CreateInstitutionTable extends Migration
             $table->integer('id_User')->unsigned();
             $table->timestamps();
 
-            $table->foreign('id_User')->references('id_User')->on('users');
+            $table->foreign('id_User')->references('id_User')->on('users')->onDelete('cascade');
         });
     }
 

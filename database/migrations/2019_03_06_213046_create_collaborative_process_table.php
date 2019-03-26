@@ -22,7 +22,7 @@ class CreateCollaborativeProcessTable extends Migration
             $table->timestamps();
 
             $table->foreign('id_User')->references('id_User')->on('users')->onDelete('cascade');
-            $table->foreign('id_Institution')->references('id_Institution')->on('institution');
+            $table->foreign('id_Institution')->references('id_Institution')->on('institution')->onDelete('cascade');
         });
     }
 

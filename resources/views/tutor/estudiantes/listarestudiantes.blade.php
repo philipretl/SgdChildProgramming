@@ -65,7 +65,7 @@
                 <div class="x_content">
                   <table id="datatable" class="table table-striped table-bordered">
                     <div class="text-center">
-                      <div class="btn-group">
+                    <!--  <div class="btn-group">
                         <button data-toggle="dropdown" class="btn btn-default dropdown-toggle" type="button" aria-expanded="false">Grado
                           <span class="caret"></span>
                         </button>
@@ -92,7 +92,7 @@
                             <a href="#">Undécimo</a>
                           </li>
                         </ul>
-                      </div>
+                      </div> -->
                     </div>
                     <thead>
                       <tr>
@@ -107,20 +107,23 @@
 
 
                     <tbody>
-                      <tr>
-                        <td>Tiger Nixon</td>
-                        <td>System Architect</td>
-                        <td>56</td>
-                        <td>Institución</td>
-                        <td>
-                          <a href="form_Crear_Estudiantes.html" class="btn btn-info btn-xs">
-                            <i class="fa fa-pencil"></i> Editar </a>
-                          <a data-toggle="modal" href="#deleteModal" class="btn btn-danger btn-xs">
-                            <i class="fa fa-trash-o"></i> Eliminar </a>
-                        </td>
+                      @foreach ($childs as $child)
+                        <tr>
+                          <td>{{$child->name_Child}}</td>
+                          <td>{{$child->grade->name_Grade}}</td>
+                          <td>{{$child->age_Child}}</td>
+                          <td>{{$child->institution->name_Institution}}</td>
+                          <td>
+                            <a href="form_Crear_Estudiantes.html" class="btn btn-info btn-xs">
+                              <i class="fa fa-pencil"></i> Editar </a>
+                            <a data-toggle="modal" href="#deleteModal" class="btn btn-danger btn-xs">
+                              <i class="fa fa-trash-o"></i> Eliminar </a>
+                          </td>
 
-                      </tr>
-                                            
+                        </tr>
+                      @endforeach
+
+
 
                     </tbody>
                   </table>

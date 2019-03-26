@@ -19,7 +19,8 @@ class CreateAbstractionMechanismTable extends Migration
             $table->integer('id_Practice')->unsigned();
             $table->timestamps();
 
-            $table->foreign('id_Practice')->references('id_Practice')->on('practice');
+            $table->foreign('id_Practice')->references('id_Practice')->on('practice')
+            ->onDelete('cascade');
         });
     }
 
