@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Laracasts\Flash\Flash;
 use App\Institution;
 use App\User;
 
@@ -21,8 +22,9 @@ class InstitutionController extends Controller
         $user = User::where('id_User',1)->first();
         $institution = new Institution($request->all());
         //dd($request);
-        $institution->user()->associate($user);
-        dd($institution->user());
+
+        $institution->user()->associate($user->id_User);
+
         $institution->save();
         Flash::success("Se ha agregado la institucion correctamente");
         return redirect()->route('instituciones');

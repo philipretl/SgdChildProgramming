@@ -50,5 +50,7 @@ Route::prefix('/sgd')->group(function(){
   Route::get('/instituciones','User\InstitutionController@index')->name('instituciones');
   Route::post('/salvar-institucion','User\InstitutionController@create')->name('salvarinstitucion');
 
+  Route::delete('/borrar-instituciones','User\InstitutionController@delete')->name('borrarinstitucion');
+
 
 });

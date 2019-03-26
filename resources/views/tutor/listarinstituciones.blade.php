@@ -84,7 +84,7 @@
                   @foreach ($institutions as $institution)
                       <tr>
                         <td>
-                          <a>{{$institution->name_Intitution}}</a>
+                          <a>{{$institution->name_Institution}}</a>
                         </td>
                         <td>
                           <a>{{$institution->address_Institution}}</a>
