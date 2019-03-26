@@ -13,11 +13,11 @@
 
 
 Route::get('/pruebaD', function () {
-    return view('tutor.instituciones');
+    return view('tutor.creargrados');
 })->name('/pruebaD');
 
 Route::get('/pruebaM', function () {
-    return view('tutor.instituciones');
+    return view('tutor.listarinstituciones');
 })->name('/pruebaM');
 
 
