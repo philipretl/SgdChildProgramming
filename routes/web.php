@@ -41,6 +41,9 @@ Route::prefix('/sgd')->group(function(){
   Route::get('/crear-estudiante','User\ChildController@create')->name('crearestudiante');
   Route::post('/salvar-estudiante','User\ChildController@store')->name('salvarestudiante');
 
+  Route::get('/editar-estudiante/{id}','User\ChildController@edit')->name('editarestudiante');
+  Route::get('/actualizar-estudiante/{id}','User\ChildController@update')->name('actualizarestudiante');
+  Route::delete('/borrar-estudiante','User\ChildController@delete')->name('borrarestudiante');
 
   // rutas para las instituciones
   Route::get('/crear-institucion', function () {

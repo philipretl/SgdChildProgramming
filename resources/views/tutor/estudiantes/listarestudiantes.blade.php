@@ -2,7 +2,7 @@
 
 @section('subtittle')
   <div class="title_left">
-    <h3> Instituciones<small> </small> </h3>
+    <h3> Estudiantes<small> </small> </h3>
   </div>
 @endsection
 
@@ -114,10 +114,20 @@
                           <td>{{$child->age_Child}}</td>
                           <td>{{$child->institution->name_Institution}}</td>
                           <td>
-                            <a href="form_Crear_Estudiantes.html" class="btn btn-info btn-xs">
+                            <a href="{{route('editarestudiante',$child->id_Child)}}" class="btn btn-info btn-xs">
                               <i class="fa fa-pencil"></i> Editar </a>
-                            <a data-toggle="modal" href="#deleteModal" class="btn btn-danger btn-xs">
-                              <i class="fa fa-trash-o"></i> Eliminar </a>
+                            <!-- Button trigger modal -->
+                            <form action="{{route('borrarestudiante',[$child->id_Child])}}" method="POST" id="form_x" data-parsley-validate class="form-horizontal form-label-left">
+                              {{method_field('DELETE')}}
+                               {{ csrf_field() }}
+
+
+                                  <input type="hidden" readonly id="id_Child" value="{{$child->id_Child}}" name="id_Child" required="required" class="form-control col-md-7 col-xs-12">
+
+
+                              <button type="submit" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Eliminar</button>
+                            </form>
+
                           </td>
 
                         </tr>
