@@ -17,7 +17,7 @@ class InstitutionController extends Controller
       return view('tutor.institucion.listarinstituciones')->with('institutions',$institutions);
     }
 
-    public function create(Request $request){
+    public function store(Request $request){
       //$user = User::find(auth()->user()->id);
         $user = User::where('id_User',1)->first();
         $institution = new Institution($request->all());

@@ -36,9 +36,10 @@ Route::prefix('/sgd')->group(function(){
   Route::get('/practicas','User\FlavorController@index')->name('practicas');
 
   //rutas para los estudiantes
-  Route::get('/crear-estudiante', function () {
-      return view('tutor.crearestudiantes');
-  })->name('crearestudiantes');
+
+
+  Route::get('/estudiantes','User\ChildController@index')->name('estudiantes');
+  Route::get('/crear-estudiante','User\ChildController@create')->name('crearestudiante');
 
 
 
@@ -50,7 +51,7 @@ Route::prefix('/sgd')->group(function(){
   Route::get('/instituciones','User\InstitutionController@index')->name('instituciones');
   Route::get('/editar-instituciones/{id}','User\InstitutionController@edit')->name('editarinstitucion');
   Route::get('/actualizar-instituciones/{id}','User\InstitutionController@update')->name('actualizarinstitucion');
-  Route::post('/salvar-institucion','User\InstitutionController@create')->name('salvarinstitucion');
+  Route::post('/salvar-institucion','User\InstitutionController@store')->name('salvarinstitucion');
 
   Route::delete('/borrar-instituciones','User\InstitutionController@delete')->name('borrarinstitucion');
 

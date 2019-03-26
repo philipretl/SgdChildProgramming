@@ -22,8 +22,8 @@
       <li><a><i class="fa fa-edit"></i>Estudiantes<span class="fa fa-chevron-down"></span></a>
         <ul class="nav child_menu">
 
-          <li><a href="form_wizards.html">Listar</a></li>
-            <li><a href="{{route('crearestudiantes')}}">Crear Estudiante</a></li>
+            <li><a href="{{route('estudiantes')}}">Listar</a></li>
+            <li><a href="{{route('crearestudiante')}}">Crear Estudiante</a></li>
 
         </ul>
       </li>
@@ -31,7 +31,7 @@
         <ul class="nav child_menu">
 
           <li><a href="form_wizards.html">Listar</a></li>
-            <li><a href="{{route('crearestudiantes')}}">Crear Curso</a></li>
+            <li><a href="">Crear Curso</a></li>
 
         </ul>
       </li>

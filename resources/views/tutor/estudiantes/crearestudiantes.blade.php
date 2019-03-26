@@ -96,11 +96,11 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Institución<span class="required">*</span></label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <select class="form-control">
-                                <option>Elige ...</option>
-                                <option>Institucion a</option>
-                                <option>Institucion b</option>
-                                <option>Institucion c</option>
-                                <option>Institucion d</option>
+                              @foreach ($institutions as $institution)
+                                  <option value"{{$institution->id_Institution}}">{{$institution->name_Institution}}</option>
+                              @endforeach
+
+
                             </select>
                         </div>
                     </div>
