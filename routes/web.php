@@ -13,7 +13,7 @@
 
 
 Route::get('/pruebaD', function () {
-    return view('tutor.creargrados');
+    return view('tutor.crearinstituciones');
 })->name('/pruebaD');
 
 Route::get('/pruebaM', function () {
