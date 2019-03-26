@@ -97,13 +97,23 @@
                         </td>
                         <td>
                           <!--<a data-toggle="modal" href="#exampleModal" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>-->
-                          <a href="form_Crear_Instituciones.html" class="btn btn-info btn-xs">
-                            <i class="fa fa-pencil"></i> Edit </a>
+                          <a href="{{route('editarinstitucion',$institution->id_Institution)}}" class="btn btn-info btn-xs">
+                            <i class="fa fa-pencil"></i> Editar </a>
                           <!-- Button trigger modal -->
-                          <a data-toggle="modal" href="#deleteModal" class="btn btn-danger btn-xs">
-                            <i class="fa fa-trash-o"></i> Delete </a>
+                          <form action="{{route('borrarinstitucion',[$institution->id])}}" method="POST" id="form_x" data-parsley-validate class="form-horizontal form-label-left">
+                            {{method_field('DELETE')}}
+                             {{ csrf_field() }}
+
+
+                                <input type="hidden" readonly id="id_Institution" value="{{$institution->id_Institution}}" name="id_Institution" required="required" class="form-control col-md-7 col-xs-12">
+
+
+                            <button type="submit" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Eliminar</button>
+                          </form>
+
 
                         </td>
+
                       </tr>
                     @endforeach
                 </tbody>
@@ -120,25 +130,7 @@
   <!-- /page content -->
 
   <!--//////// Modal elimiar Institución /////////////////////////-->
-  <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Eliminar Institución</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          ¿Esta seguro de eliminar esta institución?
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-primary">Eliminar</button>
-        </div>
-      </div>
-    </div>
-  </div>
+
 
 
 @endsection

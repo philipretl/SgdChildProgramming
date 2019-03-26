@@ -44,10 +44,12 @@ Route::prefix('/sgd')->group(function(){
 
   // rutas para las instituciones
   Route::get('/crear-institucion', function () {
-      return view('tutor.crearinstituciones');
+      return view('tutor.institucion.crearinstituciones');
   })->name('crearinstituciones');
 
   Route::get('/instituciones','User\InstitutionController@index')->name('instituciones');
+  Route::get('/editar-instituciones/{id}','User\InstitutionController@edit')->name('editarinstitucion');
+  Route::get('/actualizar-instituciones/{id}','User\InstitutionController@update')->name('actualizarinstitucion');
   Route::post('/salvar-institucion','User\InstitutionController@create')->name('salvarinstitucion');
 
   Route::delete('/borrar-instituciones','User\InstitutionController@delete')->name('borrarinstitucion');

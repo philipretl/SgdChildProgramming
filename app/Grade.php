@@ -9,7 +9,7 @@ class Grade extends Model
     //
     protected $table='grade';
     protected $fillable=['name_Grade', 'id_Instution'];
-    protected $primary_key='id_Grade';
+    protected $primaryKey='id_Grade';
 
     public function childs(){
       return $this->hasMany('App\Child');

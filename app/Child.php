@@ -9,7 +9,7 @@ class Child extends Model
     //
     protected $table='child';
     protected $fillable=['name_Child','age_Child', 'id_Institution','id_Grade'];
-    protected $primary_key='id_Child';
+    protected $primaryKey='id_Child';
 
     public function institution(){
       return $this->belongsTo('App\Institution', 'id_Institution', 'id_Child');

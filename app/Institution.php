@@ -10,7 +10,7 @@ class Institution extends Model
     protected $table='institution';
     protected $fillable=['name_Institution','address_Institution',
     'phone_Institution','code_Institution','id_User'];
-    protected $primary_key='id_Institution';
+    protected $primaryKey='id_Institution';
 
 
     public function childs(){

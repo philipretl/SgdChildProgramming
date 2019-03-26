@@ -11,7 +11,7 @@ class G_Mentor_Task extends Model
     protected $fillable=['name_G_Mentor_Task','description_G_Mentor_Task',
     'target_G_Mentor_Task','inputs_G_Mentor_Task','outputs_G_Mentor_Task',
     'id_Collaborative_Process'];
-    protected $primary_key='id_G_Mentor_Task';
+    protected $primaryKey='id_G_Mentor_Task';
 
     public function collaborative_process(){
       return $this->belongsTo('App\Collaborative_Process','id_Collaborative_Process',

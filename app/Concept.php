@@ -10,7 +10,7 @@ class Concept extends Model
     public $table='concept';
     public $fillable= ['description_Concept', 'name_Concept',
     'note_Concept','id_Child_Let_Task'];
-    public $primary_key='id_Concept';
+    public $primaryKey='id_Concept';
 
 
     public function concept(){
