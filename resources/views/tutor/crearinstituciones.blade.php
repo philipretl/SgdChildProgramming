@@ -62,20 +62,20 @@
               </ul>
               <div class="clearfix"></div>
             </div>
-            
+
             <div class="x_content">
 
                   <div class="x_content">
                     <br />
-                    <form id="form_x" data-parsley-validate class="form-horizontal form-label-left">
-
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name_Institution">Nombre <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="name_Institution" required="required" class="form-control col-md-7 col-xs-12">
-                        </div>
-                      </div>
+                    <form action="{{route('salvarinstitucion')}}" method="POST" id="form_x" data-parsley-validate class="form-horizontal form-label-left">
+                       {{ csrf_field() }}
+                       <div class="form-group">
+                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name_Institution">Nombre<span class="required">*</span>
+                         </label>
+                         <div class="col-md-6 col-sm-6 col-xs-12">
+                           <input type="text" id="name_Institution" name="name_Institution" required="required" class="form-control col-md-7 col-xs-12">
+                         </div>
+                       </div>
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="address_Institution">Dirección<span class="required">*</span>
                         </label>
@@ -90,7 +90,7 @@
                           <input type="text" id="phone_Institution" name="phone_Institution" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
-                      
+
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="code_Institution">Código<span class="required">*</span>
                         </label>
@@ -103,7 +103,7 @@
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
 						              <button class="btn btn-primary" type="listar">Limpiar</button>
-                          <button type="agregar" class="btn btn-success">Agregar</button>
+                          <button type="submit" class="btn btn-success">Agregar</button>
                         </div>
                       </div>
 
@@ -111,7 +111,7 @@
                   </div>
                 </div>
               </div>
-            </div>            
+            </div>
           </div>
         <!-- /page content -->
         <!-- footer content -->

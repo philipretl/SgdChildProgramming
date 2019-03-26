@@ -64,7 +64,7 @@
               </ul>
               <div class="clearfix"></div>
             </div>
-            
+
             <div class="x_content">
 
 
@@ -81,160 +81,31 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>
-                      <a>Institucion 1</a>
-                    </td>
-                    <td>
-                      <a>calle 13 #29-30</a>
-                    </td>
-                    <td>
-                      <a>8787675</a>
-                    </td>
-                    <td>
-                      <a>1046</a>
-                    </td>
-                    <td>
-                      <!--<a data-toggle="modal" href="#exampleModal" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>-->
-                      <a href="form_Crear_Instituciones.html" class="btn btn-info btn-xs">
-                        <i class="fa fa-pencil"></i> Edit </a>
-                      <!-- Button trigger modal -->
-                      <a data-toggle="modal" href="#deleteModal" class="btn btn-danger btn-xs">
-                        <i class="fa fa-trash-o"></i> Delete </a>
+                  @foreach ($institutions as $institution)
+                      <tr>
+                        <td>
+                          <a>{{$institution->name_Intitution}}</a>
+                        </td>
+                        <td>
+                          <a>{{$institution->address_Institution}}</a>
+                        </td>
+                        <td>
+                          <a>{{$institution->phone_Institution}}</a>
+                        </td>
+                        <td>
+                          <a>{{$institution->code_Institution}}</a>
+                        </td>
+                        <td>
+                          <!--<a data-toggle="modal" href="#exampleModal" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>-->
+                          <a href="form_Crear_Instituciones.html" class="btn btn-info btn-xs">
+                            <i class="fa fa-pencil"></i> Edit </a>
+                          <!-- Button trigger modal -->
+                          <a data-toggle="modal" href="#deleteModal" class="btn btn-danger btn-xs">
+                            <i class="fa fa-trash-o"></i> Delete </a>
 
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a>Institucion 1</a>
-                    </td>
-                    <td>
-                      <a>calle 13 #29-30</a>
-                    </td>
-                    <td>
-                      <a>8787675</a>
-                    </td>
-                    <td>
-                      <a>1046</a>
-                    </td>
-                    <td>
-
-                      <a href="form_Crear_Instituciones.html" class="btn btn-info btn-xs">
-                        <i class="fa fa-pencil"></i> Edit </a>
-                      <a data-toggle="modal" href="#deleteModal" class="btn btn-danger btn-xs">
-                        <i class="fa fa-trash-o"></i> Delete </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a>Institucion 1</a>
-                    </td>
-                    <td>
-                      <a>calle 13 #29-30</a>
-                    </td>
-                    <td>
-                      <a>8787675</a>
-                    </td>
-                    <td>
-                      <a>1046</a>
-                    </td>
-                    <td>
-                      <a href="form_Crear_Instituciones.html" class="btn btn-info btn-xs">
-                        <i class="fa fa-pencil"></i> Edit </a>
-                      <a data-toggle="modal" href="#deleteModal" class="btn btn-danger btn-xs">
-                        <i class="fa fa-trash-o"></i> Delete </a>
-
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a>Institucion 1</a>
-                    </td>
-                    <td>
-                      <a>calle 13 #29-30</a>
-                    </td>
-                    <td>
-                      <a>8787675</a>
-                    </td>
-                    <td>
-                      <a>1046</a>
-                    </td>
-                    <td>
-
-                      <a href="form_Crear_Instituciones.html" class="btn btn-info btn-xs">
-                        <i class="fa fa-pencil"></i> Edit </a>
-                      <a data-toggle="modal" href="#deleteModal" class="btn btn-danger btn-xs">
-                        <i class="fa fa-trash-o"></i> Delete </a>
-
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a>Institucion 1</a>
-                    </td>
-                    <td>
-                      <a>calle 13 #29-30</a>
-                    </td>
-                    <td>
-                      <a>8787675</a>
-                    </td>
-                    <td>
-                      <a>1046</a>
-                    </td>
-                    <td>
-                      <a href="form_Crear_Instituciones.html" class="btn btn-info btn-xs">
-                        <i class="fa fa-pencil"></i> Edit </a>
-                      <a data-toggle="modal" href="#deleteModal" class="btn btn-danger btn-xs">
-                        <i class="fa fa-trash-o"></i> Delete </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a>Institucion 1</a>
-                    </td>
-                    <td>
-                      <a>calle 13 #29-30</a>
-                    </td>
-                    <td>
-                      <a>8787675</a>
-                    </td>
-                    <td>
-                      <a>1046</a>
-                    </td>
-                    <td>
-
-                      <a href="form_Crear_Instituciones.html" class="btn btn-info btn-xs">
-                        <i class="fa fa-pencil"></i> Edit </a>
-                      <a data-toggle="modal" href="#deleteModal" class="btn btn-danger btn-xs">
-                        <i class="fa fa-trash-o"></i> Delete </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a>Institucion 1</a>
-                    </td>
-                    <td>
-                      <a>calle 13 #29-30</a>
-                    </td>
-                    <td>
-                      <a>8787675</a>
-                    </td>
-                    <td>
-                      <a>1046</a>
-                    </td>
-                    <td>
-
-                      <a href="form_Crear_Instituciones.html" class="btn btn-info btn-xs">
-                        <i class="fa fa-pencil"></i> Edit </a>
-                      <a data-toggle="modal" href="#deleteModal" class="btn btn-danger btn-xs">
-                        <i class="fa fa-trash-o"></i> Delete </a>
-                    </td>
-                  </tr>
-
-
-
-
-
+                        </td>
+                      </tr>
+                    @endforeach
                 </tbody>
               </table>
               <!-- End SmartWizard Content -->

@@ -92,7 +92,7 @@
 
 
             </div>
-
+            @include('flash::message')
             @yield('content')
 
           </div>
@@ -121,5 +121,9 @@
 
     <!-- Custom Theme Scripts -->
     <script src="{{asset('/sgd/build/js/custom.min.js')}}"></script>
+
+    <script>
+      $('#flash-overlay-modal').modal();
+    </script>
   </body>
 </html>
