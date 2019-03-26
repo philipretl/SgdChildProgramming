@@ -14,7 +14,7 @@
 
 Route::get('/pruebaD', function () {
 
-    return view('tutor.grados.creargrados');
+    return view('tutor.grados.editargrados');
 })->name('/pruebaD');
 
 
