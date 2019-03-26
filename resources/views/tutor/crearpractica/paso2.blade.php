@@ -2,7 +2,7 @@
 
 @section('subtittle')
   <div class="title_left">
-    <h3> Creacion de Practica<small> paso 1</small> </h3>
+    <h3> Creacion de Practica<small> paso 2</small> </h3>
   </div>
 @endsection
 
