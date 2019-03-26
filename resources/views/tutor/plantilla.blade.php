@@ -30,10 +30,6 @@
               <a href="{{route('/')}}" class="site_title"><i class="fa fa-reply"></i> <span>Regresar</span></a>
             </div>
 
-
-
-
-
             <div class="clearfix"></div>
 
             <!-- menu profile quick info -->

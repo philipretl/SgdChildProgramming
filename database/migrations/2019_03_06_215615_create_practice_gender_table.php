@@ -24,7 +24,8 @@ class CreatePracticeGenderTable extends Migration
             $table->integer('id_Child_Let_Task')->unsigned();
             $table->timestamps();
 
-            $table->foreign('id_Child_Let_Task')->references('id_Child_Let_Task')->on('child_let_task');
+            $table->foreign('id_Child_Let_Task')->references('id_Child_Let_Task')
+            ->on('child_let_task')->onDelete('cascade');
         });
     }
 

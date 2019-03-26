@@ -23,7 +23,7 @@ class CreateGMecanicaTable extends Migration
             $table->timestamps();
 
             $table->foreign('id_G_Dinamica')->references('id_G_Dinamica')
-            ->on('g_dinamica');
+            ->on('g_dinamica')->onDelete('cascade');
         });
     }
 

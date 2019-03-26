@@ -21,7 +21,7 @@ class CreateCollaborativePatternsTable extends Migration
             $table->timestamps();
 
             $table->foreign('id_Thinklet')->references('id_Thinklet')
-            ->on('thinklet');
+            ->on('thinklet')->onDelete('cascade');
         });
     }
 

@@ -21,7 +21,8 @@ class CreateStrategyGamificationTable extends Migration
             $table->integer('id_G_Mentor_Task')->unsigned();
             $table->timestamps();
 
-            $table->foreign('id_G_Mentor_Task')->references('id_G_Mentor_Task')->on('g_mentor_task');
+            $table->foreign('id_G_Mentor_Task')->references('id_G_Mentor_Task')
+            ->on('g_mentor_task')->onDelete('cascade');
         });
     }
 

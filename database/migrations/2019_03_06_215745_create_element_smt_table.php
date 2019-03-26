@@ -20,7 +20,7 @@ class CreateElementSmtTable extends Migration
             $table->timestamps();
 
             $table->foreign('id_Practice_Smt')->references('id_Practice_Smt')
-            ->on('practice_smt');
+            ->on('practice_smt')->onDelete('cascade');
         });
     }
 

@@ -24,7 +24,8 @@ class CreateThinkletTable extends Migration
             $table->timestamps();
 
             $table->foreign('id_Collaborative_Process')
-            ->references('id_Collaborative_Process')->on('collaborative_process');
+            ->references('id_Collaborative_Process')->on('collaborative_process')
+            ->onDelete('cascade');
 
         });
     }

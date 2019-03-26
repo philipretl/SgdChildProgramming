@@ -61,12 +61,23 @@ class InstitutionController extends Controller
     public function indexg(Request $request){
       //$user = User::find(auth()->user()->id);
       $user = User::where('id_User',1)->first();
+      $institutions = Institution::select('name_Institution','id_Institution')
+      ->where('id_User',$user->id_User)->pluck('name_Institution','id_Institution');
+
+      return view('tutor.grados.listargrados')->with('institutions',$institutions);
+    }
+
+    public function indexgxi(Request $request){
+      //$user = User::find(auth()->user()->id);
       $user = User::where('id_User',1)->first();
+      $institutions = Institution::select('name_Institution','id_Institution')
+      ->where('id_User',$user->id_User)->pluck('name_Institution','id_Institution');
 
-      $institutions= Institution::where('id_User',$user->id_User);
 
-      $grades = Grade::where('id_User',$user->id_User)->orderBy('id_Grade','ASC')->paginate(8);
-      return view('tutor.grados.listargrados')->with('grades',$grades);
+      $grades = Grade::where('id_Institution',$request->id_Institution)->orderBy('id_Grade','ASC')->paginate(8);
+
+      return view('tutor.grados.listargrados')->with('institutions',$institutions)
+      ->with('grades', $grades);
     }
 
     public function createg(Request $request){
@@ -86,6 +97,17 @@ class InstitutionController extends Controller
       return redirect()->route('grados');
 
     }
+
+    public function getGrades(Request $request,$id){
+    //dd('hola');
+    if ($request->ajax()) {
+        $grades = Grade::select('name_Grade','id_Grade')
+        ->where('id_Institution',$id)->get();
+        //dd($grades);
+        return response()->json($grades);
+      }
+    }
+
 
 
 }

@@ -20,7 +20,7 @@ class CreateGradeTable extends Migration
             $table->timestamps();
 
             $table->foreign('id_Institution')->references('id_Institution')->on
-            ('institution');
+            ('institution')->onDelete('cascade');
         });
     }
 
