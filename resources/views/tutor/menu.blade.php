@@ -3,10 +3,10 @@
   <div class="menu_section">
     <h3>Practicas</h3>
     <ul class="nav side-menu">
-      <li><a><i class="fa fa-puzzle-piece"></i> Mis practicas <span class="fa fa-chevron-down"></span></a>
+      <li><a><i class="fa fa-puzzle-piece"></i> Mis Metodologias <span class="fa fa-chevron-down"></span></a>
         <ul class="nav child_menu">
           <li><a href="{{route('practicas')}}">Listar</a></li>
-          <li><a href="form_wizards.html">Crear Practica</a></li>
+          <li><a href="form_wizards.html">Crear Metodologias</a></li>
 
         </ul>
       </li>

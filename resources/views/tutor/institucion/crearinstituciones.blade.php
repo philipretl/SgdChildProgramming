@@ -2,7 +2,7 @@
 
 @section('subtittle')
 <div class="title_left">
-    <h3> Estudiantes<small> </small> </h3>
+    <h3>Institución<small> </small> </h3>
   </div>
 @endsection
 
