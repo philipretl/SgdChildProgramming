@@ -77,23 +77,19 @@
                           placeholder="Ingrese nombre" required="required" type="text">
                       </div>
                     </div>
-                      <div class="form-group">
-                          <label class="control-label col-md-3 col-sm-3 col-xs-12">
-                            <span class="required">*</span></label>
-                          
-                          <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Institución</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
                             <select class="form-control">
-                              <option>Elige ...</option>
-                              <option>Sexto</option>
-                              <option>Séptiomo</option>
-                              <option>Octavo</option>
-                              <option>Noveno</option>
-                              <option>Décimo</option>
-                              <option>Undécimo</option>
+                                <option>Elige ...</option>
+                                <option>Institucion a</option>
+                                <option>Institucion b</option>
+                                <option>Institucion c</option>
+                                <option>Institucion d</option>
                             </select>
-                          </div>
                         </div>
-                  
+                    </div>
+
                     <div class="ln_solid"></div>
                     <div class="form-group">
                       <div class="col-md-6 col-md-offset-3">

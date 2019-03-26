@@ -13,7 +13,8 @@
 
 
 Route::get('/pruebaD', function () {
-    return view('tutor.listarestudiante');
+
+    return view('tutor.crearinstituciones');
 })->name('/pruebaD');
 
 
