@@ -31,7 +31,7 @@
         <ul class="nav child_menu">
 
           <li><a href="form_wizards.html">Listar</a></li>
-            <li><a href="">Crear Curso</a></li>
+          <li><a href="{{route('creargrado')}}">Crear Curso</a></li>
 
         </ul>
       </li>

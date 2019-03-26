@@ -20,7 +20,8 @@ Route::get('/pruebaD', function () {
 
 //pruebas manzano
 Route::get('/pruebaM', function () {
-    return view('tutor.crearpractica.paso1');
+    return view('tutor.crearpractica.paso1
+    ');
 })->name('/pruebaM');
 
 
@@ -36,8 +37,6 @@ Route::prefix('/sgd')->group(function(){
   Route::get('/practicas','User\FlavorController@index')->name('practicas');
 
   //rutas para los estudiantes
-
-
   Route::get('/estudiantes','User\ChildController@index')->name('estudiantes');
   Route::get('/crear-estudiante','User\ChildController@create')->name('crearestudiante');
 
@@ -52,8 +51,12 @@ Route::prefix('/sgd')->group(function(){
   Route::get('/editar-instituciones/{id}','User\InstitutionController@edit')->name('editarinstitucion');
   Route::get('/actualizar-instituciones/{id}','User\InstitutionController@update')->name('actualizarinstitucion');
   Route::post('/salvar-institucion','User\InstitutionController@store')->name('salvarinstitucion');
-
   Route::delete('/borrar-instituciones','User\InstitutionController@delete')->name('borrarinstitucion');
+
+  //rutas para los cursos
+  Route::get('/grados','User\InstitutionController@indexg')->name('grados');
+  Route::get('/crear-grado','User\InstitutionController@createg')->name('creargrado');
+  Route::post('/salvar-grado','User\InstitutionController@storeg')->name('salvargrado');
 
 
 });

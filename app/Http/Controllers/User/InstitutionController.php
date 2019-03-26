@@ -7,13 +7,17 @@ use App\Http\Controllers\Controller;
 use Laracasts\Flash\Flash;
 use App\Institution;
 use App\User;
+use App\Grade;
 
 class InstitutionController extends Controller
 {
     //
 
     public function index(Request $request){
-      $institutions= Institution::orderBy('id_Institution','ASC')->paginate(8);
+      //$user = User::find(auth()->user()->id);
+      $user = User::where('id_User',1)->first();
+
+      $institutions= Institution::where('id_User',$user->id_User)->orderBy('id_Institution','ASC')->paginate(8);
       return view('tutor.institucion.listarinstituciones')->with('institutions',$institutions);
     }
 
@@ -52,6 +56,35 @@ class InstitutionController extends Controller
       $institution->delete();
       Flash::error("Se ha eliminado la institucion correctamente");
       return redirect()->route('instituciones');
+    }
+
+    public function indexg(Request $request){
+      //$user = User::find(auth()->user()->id);
+      $user = User::where('id_User',1)->first();
+      $user = User::where('id_User',1)->first();
+
+      $institutions= Institution::where('id_User',$user->id_User);
+
+      $grades = Grade::where('id_User',$user->id_User)->orderBy('id_Grade','ASC')->paginate(8);
+      return view('tutor.grados.listargrados')->with('grades',$grades);
+    }
+
+    public function createg(Request $request){
+      //$user = User::find(auth()->user()->id);
+        $user = User::where('id_User',1)->first();
+
+        $institutions = Institution::select('name_Institution','id_Institution')
+        ->where('id_User',$user->id_User)->pluck('name_Institution','id_Institution');
+        return view('tutor.grados.creargrados')->with('institutions',$institutions);
+    }
+    public function storeg(Request $request){
+      //dd($request);
+      $institution = Institution::where('id_Institution',$request->id_Institution)->first();
+      $grade = new Grade($request->all());
+      $grade->save();
+      Flash::success("Se ha agregado la institucion correctamente");
+      return redirect()->route('grados');
+
     }
 
 

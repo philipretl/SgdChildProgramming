@@ -8,13 +8,13 @@ class Grade extends Model
 {
     //
     protected $table='grade';
-    protected $fillable=['name_Grade', 'id_Instution'];
+    protected $fillable=['name_Grade', 'id_Institution'];
     protected $primaryKey='id_Grade';
 
     public function childs(){
       return $this->hasMany('App\Child');
     }
     public function institution(){
-      return $this->belongsTo('App\Instution', 'id_Institution', 'id_Grade');
+      return $this->belongsTo('App\Instution', 'id_Institution');
     }
 }

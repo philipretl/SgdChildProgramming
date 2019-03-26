@@ -28,4 +28,8 @@ class Institution extends Model
     public function collaborative_process(){
       return $this->hasMany('App\Collaborative_Process');
     }
+
+    public function getDatos(){
+      return 'id: '. $this->id_Institution .' nombre: '. $this->name_Institution;
+  }
 }

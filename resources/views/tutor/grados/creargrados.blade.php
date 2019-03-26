@@ -66,34 +66,28 @@
                 </div>
                 <div class="x_content">
 
-                  <form class="form-horizontal form-label-left" novalidate>
-
+                  <form action="{{route('salvargrado')}}" method="POST" class="form-horizontal form-label-left" novalidate>
+                    {{ csrf_field() }}
                     <div class="item form-group">
-                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name_User">Nombre
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name_Grade">Nombre
                         <span class="required">*</span>
                       </label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input id="name_User" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name"
+                        <input id="name_Grade" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name_Grade"
                           placeholder="Ingrese nombre" required="required" type="text">
                       </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Institución</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                            <select class="form-control">
-                                <option>Elige ...</option>
-                                <option>Institucion a</option>
-                                <option>Institucion b</option>
-                                <option>Institucion c</option>
-                                <option>Institucion d</option>
-                            </select>
+                          {!! Form::select('id_Institution',$institutions,null,['id'=>'institution','class' => 'form-control select-institution',
+                              'placeholder' => 'Seleccione una Institucion'])!!}
                         </div>
                     </div>
 
                     <div class="ln_solid"></div>
                     <div class="form-group">
                       <div class="col-md-6 col-md-offset-3">
-                        <button type="submit" class="btn btn-primary">Limpiar</button>
                         <button id="send" type="submit" class="btn btn-success">Guardar</button>
                       </div>
                     </div>

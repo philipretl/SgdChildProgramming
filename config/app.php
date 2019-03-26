@@ -178,6 +178,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         //providers personales
+        Collective\Html\HtmlServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class
 
     ],
@@ -230,6 +231,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         //Aliases personales
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
         'Flash'=> Laracasts\Flash\Flash::class
 
     ],

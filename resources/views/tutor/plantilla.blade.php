@@ -27,7 +27,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="{{route('/')}}" class="site_title"><i class="fa fa-paw"></i> <span>SGD</span></a>
+              <a href="{{route('/')}}" class="site_title"><i class="fa fa-reply"></i> <span>Regresar</span></a>
             </div>
 
 
@@ -125,5 +125,7 @@
     <script>
       $('#flash-overlay-modal').modal();
     </script>
+
+    @yield('js')
   </body>
 </html>
