@@ -37,5 +37,32 @@ class ChildController extends Controller
       return redirect()->route('estudiantes');
     }
 
+    public function edit($id){
+        $child = Child::find($id);
+        //dd($institution);
+        return view('tutor.estudiantes.editarestudiantes')->with('child',$child);
+    }
+
+    public function update(Request $request,$id){
+        $child = Child::find($id);
+        $child->fill($request->all());
+        $child->save();
+        Flash::info("Se ha editado el estudiante correctamente");
+        return redirect()->route('estudiantes');
+
+    }
+
+    public function delete(Request $request){
+      //dd($request);
+      $child = Child::where('id_Child',$request->id_Child)->first();
+      //dd($institution);
+      if ($child != null) {
+        $child->delete();
+      }
+      Flash::error("Se ha eliminado el estudiante correctamente");
+      return redirect()->route('estudiantes');
+    }
+
+
 
 }
