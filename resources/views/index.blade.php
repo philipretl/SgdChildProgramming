@@ -49,7 +49,7 @@
       </li>
 
       <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{route('practicas')}}">SGD</a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{route('metodologias')}}">SGD</a>
       </li>
         </ul>
       </div>
@@ -62,7 +62,7 @@
       <img class="img-fluid mb-5 d-block mx-auto" src="index/img/logocp.png" alt="">
       <h1 class="text-uppercase mb-0">SGD-Childprogramming</h1>
       <hr class="star-light">
-      <h2 class="font-weight-light mb-0">Sistema de gestion y diseño para la metodologia Childprogramming</h2>
+      <h2 class="font-weight-light mb-0">Sistema de gestion y diseño de metodologias para Childprogramming</h2>
     </div>
   </header>
 
@@ -172,7 +172,7 @@
                 <i class="fab fa-fw fa-twitter"></i>
               </a>
             </li>
-          
+
             <li class="list-inline-item">
               <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
                 <i class="fab fa-fw fa-dribbble"></i>

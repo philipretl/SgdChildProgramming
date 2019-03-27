@@ -5,8 +5,12 @@
     <ul class="nav side-menu">
       <li><a><i class="fa fa-puzzle-piece"></i> Mis Metodologias <span class="fa fa-chevron-down"></span></a>
         <ul class="nav child_menu">
-          <li><a href="{{route('practicas')}}">Listar</a></li>
-          <li><a href="form_wizards.html">Crear Metodologias</a></li>
+          <li><a href="{{route('metodologias')}}">Listar Metodologias</a></li>
+          <li><a href="{{route('crearmetodp1')}}">Crear Metodologias</a></li>
+          <li><a href="form_wizards.html">Listar Actividades</a></li>
+          <li><a href="form_wizards.html">Crear Actividad</a></li>
+          <li><a href="form_wizards.html">Listar Practicas</a></li>
+          <li><a href="form_wizards.html">Crear Practicas</a></li>
 
         </ul>
       </li>

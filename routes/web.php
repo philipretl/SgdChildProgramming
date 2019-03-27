@@ -14,13 +14,13 @@
 
 Route::get('/pruebaD', function () {
 
-    return view('tutor.grados.listargrados');
+    return view('tutor.grados.listargrado');
 })->name('/pruebaD');
 
 
 //pruebas manzano
 Route::get('/pruebaM', function () {
-    return view('tutor.crearpractica.paso1
+    return view('tutor.metodologias.paso2
     ');
 })->name('/pruebaM');
 
@@ -34,7 +34,10 @@ Route::get('/', function () {
 Route::prefix('/sgd')->group(function(){
 
   //rutas para las practicas
-  Route::get('/practicas','User\FlavorController@index')->name('practicas');
+  Route::get('/metodologias','User\FlavorController@index')->name('metodologias');
+  Route::get('/crear-metodologia/paso1','User\FlavorController@createp1')->name('crearmetodp1');
+  Route::get('/crear-metodologia/paso2','User\FlavorController@createp2')->name('crearmetodp2');
+  Route::get('/crear-metodologia/paso3','User\FlavorController@createp3')->name('crearmetodp3');
 
   //rutas para los estudiantes
   Route::get('/estudiantes','User\ChildController@index')->name('estudiantes');
