@@ -30,7 +30,7 @@
       <li><a><i class="fa fa-book"></i>Cursos<span class="fa fa-chevron-down"></span></a>
         <ul class="nav child_menu">
 
-          <li><a href="form_wizards.html">Listar</a></li>
+          <li><a href="{{route('grados')}}">Listar</a></li>
           <li><a href="{{route('creargrado')}}">Crear Curso</a></li>
 
         </ul>

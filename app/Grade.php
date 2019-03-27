@@ -12,9 +12,9 @@ class Grade extends Model
     protected $primaryKey='id_Grade';
 
     public function childs(){
-      return $this->hasMany('App\Child');
+      return $this->hasMany('App\Child','id_Grade');
     }
     public function institution(){
-      return $this->belongsTo('App\Instution', 'id_Institution');
+      return $this->belongsTo('App\Institution', 'id_Institution');
     }
 }

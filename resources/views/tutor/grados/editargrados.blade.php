@@ -65,22 +65,21 @@
                   <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
-
-                  <form action="{{route('salvargrado')}}" method="POST" class="form-horizontal form-label-left" novalidate>
+                  <form action="{{route('actualizargrado',[$grade])}}" method="PUT" id="form_x" data-parsley-validate class="form-horizontal form-label-left">
                     {{ csrf_field() }}
                     <div class="item form-group">
                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name_Grade">Nombre
                         <span class="required">*</span>
                       </label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input id="name_Grade" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name_Grade"
+                        <input id="name_Grade" value="{{$grade->name_Grade}}" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name_Grade"
                           placeholder="Ingrese nombre" required="required" type="text">
                       </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Institución</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          {!! Form::select('id_Institution',$institutions,null,['id'=>'institution','class' => 'form-control select-institution',
+                          {!! Form::select('id_Institution',$institutions,$grade->institution->id_Institution,['id'=>'institution','class' => 'form-control select-institution',
                               'placeholder' => 'Seleccione una Institucion'])!!}
                         </div>
                     </div>

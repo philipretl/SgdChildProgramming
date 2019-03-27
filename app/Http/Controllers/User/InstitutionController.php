@@ -67,15 +67,20 @@ class InstitutionController extends Controller
       return view('tutor.grados.listargrados')->with('institutions',$institutions);
     }
 
+
+
     public function indexgxi(Request $request){
+      //dd($request);
+      // Metodo para listar los grados por institucion
       //$user = User::find(auth()->user()->id);
       $user = User::where('id_User',1)->first();
       $institutions = Institution::select('name_Institution','id_Institution')
       ->where('id_User',$user->id_User)->pluck('name_Institution','id_Institution');
 
 
-      $grades = Grade::where('id_Institution',$request->id_Institution)->orderBy('id_Grade','ASC')->paginate(8);
-
+      $grades = Grade::where('id_Institution',$request->id_Institution)
+      ->orderBy('id_Grade','ASC')->paginate(8);
+      //dd($grades);
       return view('tutor.grados.listargrados')->with('institutions',$institutions)
       ->with('grades', $grades);
     }
@@ -96,6 +101,34 @@ class InstitutionController extends Controller
       Flash::success("Se ha agregado la institucion correctamente");
       return redirect()->route('grados');
 
+    }
+
+    public function deleteg(Request $request){
+      $grade = Grade::where('id_Grade',$request->id_Grade)->first();
+      //dd($institution);
+      $grade->delete();
+      Flash::error("Se ha eliminado el grado correctamente");
+      return redirect()->route('grados');
+    }
+    public function editg(Request $request,$id){
+      //$user = User::find(auth()->user()->id);
+        $user = User::where('id_User',1)->first();
+
+        $institutions = Institution::select('name_Institution','id_Institution')
+        ->where('id_User',$user->id_User)->pluck('name_Institution','id_Institution');
+
+        $grade=Grade::where('id_Grade',$id)->first();
+        //dd($grade);
+
+        return view('tutor.grados.editargrados')->with('institutions',$institutions)
+        ->with('grade', $grade);
+    }
+    public function updateg(Request $request,$id){
+      $grade = Grade::find($id);
+      $grade->fill($request->all());
+      $grade->save();
+      Flash::info("Se ha editado el grado correctamente");
+      return redirect()->route('grados');
     }
 
     public function getGrades(Request $request,$id){

@@ -14,7 +14,7 @@
 
 Route::get('/pruebaD', function () {
 
-    return view('tutor.grados.editargrados');
+    return view('tutor.grados.listargrados');
 })->name('/pruebaD');
 
 
@@ -59,8 +59,12 @@ Route::prefix('/sgd')->group(function(){
 
   //rutas para los cursos
   Route::get('/grados','User\InstitutionController@indexg')->name('grados');
+  Route::get('/grados-institution','User\InstitutionController@indexgxi')->name('gradosinstituciones');
   Route::get('/crear-grado','User\InstitutionController@createg')->name('creargrado');
   Route::post('/salvar-grado','User\InstitutionController@storeg')->name('salvargrado');
+  Route::get('/editar-grado/{id}','User\InstitutionController@editg')->name('editargrado');
+  Route::delete('/borrar-grado','User\InstitutionController@deleteg')->name('borrargrado');
+  Route::get('/actualizar-grado/{id}','User\InstitutionController@updateg')->name('actualizargrado');
 
 
 });

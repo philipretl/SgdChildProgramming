@@ -34,7 +34,7 @@
               <div class="x_panel">
                 <div class="x_title">
                   <h2>A continuación se listan cursos
-                                        
+
                   </h2>
 
                   <ul class="nav navbar-right panel_toolbox">
@@ -68,64 +68,64 @@
 
 
                   <!-- Smart Wizard -->
-                  <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12"> Seleccionar Institución</label>
-                    <div class="col-md-6 col-sm-9 col-xs-12">
-                        <select class="form-control">
-                        <option>Elige ...</option>
-                        <option>Institucion a</option>
-                        <option>Institucion b</option>
-                        <option>Institucion c</option>
-                        <option>Institucion d</option>
-                        </select>
+
+
+                  <form action="{{route('gradosinstituciones')}}" method="GET" class="form-horizontal form-label-left" novalidate>
+                    {{ csrf_field() }}
+
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-6">Institución</label>
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                          {!! Form::select('id_Institution',$institutions,null,['id'=>'institution','class' => 'form-control select-institution',
+                              'placeholder' => 'Seleccione una Institucion'])!!}
+
+                        </div>
+                        <div class="col-md-4 ">
+                          <button id="send" type="submit" class="btn btn-success">Filtrar</button>
+                        </div>
                     </div>
-                </div>
-                
+                  </form>
+
                   <table class="table table-striped projects">
                     <thead>
                       <tr>
                         <th>Curso</th>
-                        <th>Numero Estudiantes</th>                        
+                        <th>Numero Estudiantes</th>
                         <th style="width: 20%">#Edit</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>
-                          <a>curso 5</a>
-                        </td>
-                        <td>
-                          <a>30</a>
-                        </td>
-                        <td>
-                          <!--<a data-toggle="modal" href="#exampleModal" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>-->
-                          <a href="#editargrados" class="btn btn-info btn-xs">
-                            <i class="fa fa-pencil"></i> Editar </a>
-                          <!-- Button trigger modal -->
-                          <a data-toggle="modal" href="#deleteModal" class="btn btn-danger btn-xs">
-                            <i class="fa fa-trash-o"></i> Elimiar </a>
-
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <a>Curso 16</a>
-                        </td>
-                        <td>
-                          <a>33</a>
-                        </td>
-                       
-                        <td>
-
-                          <a href="" class="btn btn-info btn-xs">
-                            <i class="fa fa-pencil"></i> Edit </a>
-                          <a data-toggle="modal" href="#deleteModal" class="btn btn-danger btn-xs">
-                            <i class="fa fa-trash-o"></i> Delete </a>
-                        </td>
-                      </tr>
+                      @isset($grades)
+                        @foreach ($grades as $grade)
+                          <tr>
+                            <td>
+                              <a>{{$grade->name_Grade}}</a>
+                            </td>
+                            <td>
+                              <a>{{count($grade->childs)}}</a>
+                            </td>
+                            <td>
+                              <a href="{{route('editargrado',$grade->id_Grade)}}" class="btn btn-info btn-xs">
+                                <i class="fa fa-pencil"></i> Editar </a>
+                              <!-- Button trigger modal -->
+                              <form action="{{route('borrargrado',[$grade->id_Grade])}}" method="POST" id="form_x" data-parsley-validate class="form-horizontal form-label-left">
+                                {{method_field('DELETE')}}
+                                 {{ csrf_field() }}
 
 
-                      
+                                    <input type="hidden" readonly id="id_Grade" value="{{$grade->id_Grade}}" name="id_Grade" required="required" class="form-control col-md-7 col-xs-12">
+
+
+                                <button type="submit" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Eliminar</button>
+                              </form>
+
+                            </td>
+
+                          </tr>
+                        @endforeach
+
+                      @endisset
+
                     </tbody>
                   </table>
                   <!-- End SmartWizard Content -->
