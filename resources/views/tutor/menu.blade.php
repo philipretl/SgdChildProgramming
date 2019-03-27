@@ -11,6 +11,9 @@
           <li><a href="form_wizards.html">Crear Actividad</a></li>
           <li><a href="form_wizards.html">Listar Practicas</a></li>
           <li><a href="form_wizards.html">Crear Practicas</a></li>
+          <li><a href="form_wizards.html">Listar Roles</a></li>
+          <li><a href="form_wizards.html">Crear Roles</a></li>
+
 
         </ul>
       </li>
