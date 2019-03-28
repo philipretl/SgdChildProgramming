@@ -3,10 +3,10 @@
   <div class="menu_section">
     <h3>Practicas</h3>
     <ul class="nav side-menu">
-      <li><a><i class="fa fa-puzzle-piece"></i> Mis Metodologias <span class="fa fa-chevron-down"></span></a>
+      <li><a><i class="fa fa-puzzle-piece"></i> Mis Sabores <span class="fa fa-chevron-down"></span></a>
         <ul class="nav child_menu">
-          <li><a href="{{route('metodologias')}}">Listar Metodologias</a></li>
-          <li><a href="{{route('crearmetodp1')}}">Crear Metodologias</a></li>
+          <li><a href="{{route('metodologias')}}">Listar Sabores</a></li>
+          <li><a href="{{route('crearmetodp1')}}">Crear Sabor</a></li>
 
 
 

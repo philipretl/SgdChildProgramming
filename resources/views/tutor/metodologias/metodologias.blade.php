@@ -2,7 +2,7 @@
 
 @section('subtittle')
   <div class="title_left">
-    <h3> Mis Metodologias<small> </small> </h3>
+    <h3> Mis Sabores<small> </small> </h3>
   </div>
 @endsection
 
@@ -11,7 +11,7 @@
     <div class="col-md-12">
       <div class="x_panel">
         <div class="x_title">
-          <h2> Creadas <small>  </small></h2>
+          <h2> Creados <small>  </small></h2>
 
           <div class="clearfix"></div>
         </div>

@@ -3,7 +3,7 @@
 
 @section('subtittle')
   <div class="title_left">
-    <h3> Metodologias</h3>
+    <h3> Mis Sabores</h3>
   </div>
 @endsection
 
@@ -14,7 +14,7 @@
   <div class="">
 <div class="page-title">
   <div class="title_left">
-    <h3>Crear Metodologia: paso 1</h3>
+    <h3>Crear Sabor: paso 1</h3>
   </div>
 
 
