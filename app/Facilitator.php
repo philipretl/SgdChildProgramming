@@ -8,7 +8,7 @@ class Facilitator extends Model
 {
     //
     protected $table='facilitator';
-    protected $fillable=['description_facilitator', 'name_Facilitator',
+    protected $fillable=['description_Facilitator', 'name_Facilitator',
     'id_Collaborative_Process'];
     protected $primaryKey='id_Facilitator';
 

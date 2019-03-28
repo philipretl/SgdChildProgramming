@@ -17,7 +17,7 @@ class Collaborative_Process extends Model
     }
 
     public function child_let_tasks(){
-      return $this->hasMany('App\Child_Let_Task');
+      return $this->hasMany('App\Child_Let_Task','id_Collaborative_Process');
     }
 
     public function facilitators(){

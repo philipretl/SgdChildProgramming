@@ -2,7 +2,7 @@
 
 @section('subtittle')
   <div class="title_left">
-    <h3> Mis Actividades<small> </small> </h3>
+    <h3> Actividades<small> </small> </h3>
   </div>
 @endsection
 
@@ -11,7 +11,7 @@
     <div class="col-md-12 col-sm-12 col-xs-12">
       <div class="x_panel">
         <div class="x_title">
-          <h2>Listar Actividades <small>different form elements</small></h2>
+          <h2>Listar Actividades</h2>
           <ul class="nav navbar-right panel_toolbox">
             <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
             </li>
@@ -32,61 +32,56 @@
         <div class="x_content">
           <br />
 
-          <form id="demo-form2" action="" method="get" data-parsley-validate class="form-horizontal form-label-left">
+          <form action="{{route('actividadesmetod')}}" method="GET" class="form-horizontal form-label-left" novalidate>
+            {{ csrf_field() }}
 
             <div class="form-group">
-              <label class="control-label col-md-3 col-sm-3 col-xs-6">Metodologias</label>
-              <div class="col-md-4 col-sm-6 col-xs-12">
-                <select class="form-control" id="type_User">
-                  <option>Choose option</option>
-                  <option>Option one</option>
-                  <option>Option two</option>
-                  <option>Option three</option>
-                  <option>Option four</option>
-                </select>
-              </div>
-              <div class="col-md-4 ">
-                <button id="send" type="submit" class="btn btn-success">Filtrar</button>
-              </div>
-            </div>
-          </div>
+                <label class="control-label col-md-3 col-sm-3 col-xs-6">Metodologia para el proceso colaborativo: </label>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                  {!! Form::select('id_Collaborative_Process',$collaboratives_process,null,['id'=>'institution','class' => 'form-control select-institution',
+                      'placeholder' => 'Seleccione una metodologia'])!!}
 
-          <table class="table">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Nombre Actividad</th>
-                <th>Descripcion Actividad</th>
-                <th>Entradas</th>
-                <th>Salidas</th>
-                <th>Opciones</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-                <td>
-                  <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Editar </a>
-                  <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Eliminar </a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="ln_solid"></div>
-          <div class="form-group">
-            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-              <button class="btn btn-primary" type="button">Cancel</button>
-              <button class="btn btn-primary" type="reset">Reset</button>
-              <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+                <div class="col-md-4 ">
+                  <button id="send" type="submit" class="btn btn-success">Filtrar</button>
+                </div>
             </div>
-          </div>
-        </form>
+          </form>
+            @isset($collaborative_process)
+                <table class="table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Nombre Actividad</th>
+                    <th>Descripcion Actividad</th>
+                    <th>Entrada</th>
+                    <th>Salida</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @if ($collaborative_process->child_let_tasks!=null)
+
+                    @foreach ($collaborative_process->child_let_tasks as $child_let_task)
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>{{$child_let_task->name_Child_Let_Task}}</td>
+                        <td>{{$child_let_task->description_Child_Let_Task}}</td>
+                        <td>{{$child_let_task->input_Child_Let_Task}}</td>
+                        <td>{{$child_let_task->output_Child_Let_Task}}</td>
+                        <td>
+                          <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Editar </a>
+                          <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Eliminar </a>
+                        </td>
+                      </tr>
+                    @endforeach
+                  @endif
+                </tbody>
+              </table>
+              <div class="ln_solid"></div>
+          @endisset
       </div>
     </div>
   </div>
+</div>
 
 @endsection

@@ -11,6 +11,7 @@ use App\User;
 use App\Grade;
 use App\Child;
 use App\Team;
+use App\Facilitator;
 
 
 class FlavorController extends Controller
@@ -46,6 +47,10 @@ class FlavorController extends Controller
 
       $cb->save();
 
+      $faci = new Facilitator($request->all());
+      $faci->id_Collaborative_Process = $cb->id_Collaborative_Process;
+      //dd($faci);
+      $faci->save();
       $childs=Child::where('id_Grade',$request->id_Grade)->get();
       //dd($childs);
       Flash::success("Metodologia creada correctamente");
@@ -59,14 +64,8 @@ class FlavorController extends Controller
       //dd($request);
       $team = new Team($request->all());
 
-      /*foreach ($request->childs as $child) {
-        $child = Child::find($child);
-
-        $child->team()->sync($team);
-      }*/
       $team->save();
       if ($request->childs!=null) {
-        // code...
 
         foreach ($request->childs as $child) {
 

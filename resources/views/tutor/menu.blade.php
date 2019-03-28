@@ -7,12 +7,30 @@
         <ul class="nav child_menu">
           <li><a href="{{route('metodologias')}}">Listar Metodologias</a></li>
           <li><a href="{{route('crearmetodp1')}}">Crear Metodologias</a></li>
-          <li><a href="form_wizards.html">Listar Actividades</a></li>
-          <li><a href="form_wizards.html">Crear Actividad</a></li>
-          <li><a href="form_wizards.html">Listar Practicas</a></li>
-          <li><a href="form_wizards.html">Crear Practicas</a></li>
-          <li><a href="form_wizards.html">Listar Roles</a></li>
-          <li><a href="form_wizards.html">Crear Roles</a></li>
+
+
+
+
+          <li><a><i class="fa fa-book"></i>Actividades <span class="fa fa-chevron-down"></span></a>
+            <ul class="nav child_menu">
+              <li><a href="{{route('actividades')}}">Listar Actividades</a></li>
+              <li><a href="{{route('crearactividad')}}">Crear Actividad</a></li>
+            </ul>
+          </li>
+
+          <li><a><i class="fa fa-check"></i>Practicas<span class="fa fa-chevron-down"></span></a>
+            <ul class="nav child_menu">
+              <li><a href="{{route('practicas')}}">Listar Practicas</a></li>
+              <li><a href="{{route('crearpractica')}}">Crear Practicas</a></li>
+            </ul>
+          </li>
+
+          <li><a><i class="fa fa-cubes"></i>Roles<span class="fa fa-chevron-down"></span></a>
+            <ul class="nav child_menu">
+              <li><a href="form_wizards.html">Listar Roles</a></li>
+              <li><a href="form_wizards.html">Crear Roles</a></li>
+            </ul>
+          </li>
 
 
         </ul>

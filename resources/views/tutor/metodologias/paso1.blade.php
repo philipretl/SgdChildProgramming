@@ -96,6 +96,25 @@
                     </div>
                 </div>
 
+                <hr>
+                <h4>Facilitador(Encargado de ejecutar la metodologia y dirigir el proceso)</h4>
+                <br>
+                <div class="form-group">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Nombre Facilitador<span class="required">*</span>
+                  </label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    {!! Form::text('name_Facilitator', null,['class' => 'form-control', 'required'])!!}
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Descripción Facilitador<span class="required">*</span>
+                  </label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    {!! Form::textArea('description_Facilitator', null,['class' => 'form-control', 'required'])!!}
+                  </div>
+                </div>
+
+
                 <div class="form-group">
                   <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
 

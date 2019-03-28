@@ -1,8 +1,8 @@
 @extends('tutor.plantilla')
 
-@section('subtitle')
+@section('subtittle')
   <div class="title_left">
-    <h3> Crear actividades<small> </small> </h3>
+    <h3>Actividades<small> </small> </h3>
   </div>
 @endsection
 
@@ -11,7 +11,7 @@
     <div class="col-md-12 col-sm-12 col-xs-12">
       <div class="x_panel">
         <div class="x_title">
-          <h2>Crear Actividades <small>different form elements</small></h2>
+          <h2>Crear Actividad</h2>
           <ul class="nav navbar-right panel_toolbox">
             <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
             </li>
@@ -31,56 +31,56 @@
         </div>
         <div class="x_content">
           <br />
-          <form id="demo-form2" action="" method="post" data-parsley-validate class="form-horizontal form-label-left">
+
+
+
+          <form action="{{route('salvaractividad')}}" method="POST" class="form-horizontal form-label-left" novalidate>
+            {{ csrf_field() }}
 
             <div class="form-group">
-              <label class="control-label col-md-3 col-sm-3 col-xs-12">Metodologias</label>
-              <div class="col-md-6 col-sm-6 col-xs-12">
-                <select class="form-control" id="type_User">
-                  <option>Choose option</option>
-                  <option>Option one</option>
-                  <option>Option two</option>
-                  <option>Option three</option>
-                  <option>Option four</option>
-                </select>
-              </div>
+                <label class="control-label col-md-3 col-sm-3 col-xs-6">Seleccione un proceso colaborativo: </label>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                  {!! Form::select('id_Collaborative_Process',$collaboratives_process,null,['id'=>'institution','class' => 'form-control select-institution',
+                      'placeholder' => 'Seleccione un proceso colaborativo'])!!}
+
+                </div>
             </div>
             <div class="form-group">
               <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Nombre Actividad <span class="required">*</span>
               </label>
               <div class="col-md-6 col-sm-6 col-xs-12">
-                <input type="text" id="name" required="required" class="form-control col-md-7 col-xs-12">
+                <input type="text" id="name" name="name_Child_Let_Task" required="required" class="form-control col-md-7 col-xs-12">
               </div>
             </div>
             <div class="form-group">
               <label class="control-label col-md-3 col-sm-3 col-xs-12" for="description_task">Descripcion actividad <span class="required">*</span>
               </label>
               <div class="col-md-6 col-sm-6 col-xs-12">
-                <input type="text" id="description_task" name="description_task" required="required" class="form-control col-md-7 col-xs-12">
+                {!! Form::textArea('description_Child_Let_Task', null,['class' => 'form-control', 'required'])!!}
               </div>
             </div>
             <div class="form-group">
               <label class="control-label col-md-3 col-sm-3 col-xs-12" for="inputs">Entradas <span class="required">*</span>
               </label>
               <div class="col-md-6 col-sm-6 col-xs-12">
-                <input type="text" id="inputs" name="inputs" required="required" class="form-control col-md-7 col-xs-12">
+                <input type="text" id="inputs" name="input_Child_Let_Task" required="required" class="form-control col-md-7 col-xs-12">
               </div>
             </div>
             <div class="form-group">
               <label class="control-label col-md-3 col-sm-3 col-xs-12" for="outputs">Salidas <span class="required">*</span>
               </label>
               <div class="col-md-6 col-sm-6 col-xs-12">
-                <input type="text" id="outputs" name="outputs" required="required" class="form-control col-md-7 col-xs-12">
+                <input type="text" id="outputs" name="output_Child_Let_Task" required="required" class="form-control col-md-7 col-xs-12">
               </div>
             </div>
             <div class="ln_solid"></div>
             <div class="form-group">
               <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                <button type="submit" class="btn btn-success">Submit</button>
+                <button type="submit" class="btn btn-success">Añadir actividad</button>
               </div>
             </div>
-
           </form>
+
         </div>
       </div>
     </div>

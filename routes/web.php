@@ -20,7 +20,7 @@ Route::get('/pruebaD', function () {
 
 //pruebas manzano
 Route::get('/pruebaM', function () {
-    return view('tutor.metodologias.paso2
+    return view('tutor.practicas.practicas
     ');
 })->name('/pruebaM');
 
@@ -69,6 +69,24 @@ Route::prefix('/sgd')->group(function(){
   Route::get('/editar-grado/{id}','User\InstitutionController@editg')->name('editargrado');
   Route::delete('/borrar-grado','User\InstitutionController@deleteg')->name('borrargrado');
   Route::get('/actualizar-grado/{id}','User\InstitutionController@updateg')->name('actualizargrado');
+
+  //rutas para las Actividades
+  Route::get('/actividades','User\ChildLetTaskController@index')->name('actividades');
+  Route::get('/actividades-metodologia','User\ChildLetTaskController@indexmetod')->name('actividadesmetod');
+
+  Route::get('/crear-actividad','User\ChildLetTaskController@create')->name('crearactividad');
+  Route::post('/salvar-actividad','User\ChildLetTaskController@store')->name('salvaractividad');
+  Route::get('/getactividades/{id}','User\ChildLetTaskController@getActividades')->name('getactividades');
+
+  //rutas para las practicas
+  Route::get('/practicas','User\PracticeController@index')->name('practicas');
+  Route::get('/practicas-actividad','User\PracticeController@indexAct')->name('practicasact');
+  Route::get('/crear-practica','User\PracticeController@create')->name('crearpractica');
+  Route::post('/salvar-practica','User\PracticeController@storep')->name('salvarpractica');
+
+
+
+
 
 
 });
