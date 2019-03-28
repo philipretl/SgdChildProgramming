@@ -21,11 +21,11 @@ class Collaborative_Process extends Model
     }
 
     public function facilitators(){
-      return $this->hasMany('App\Facilitator');
+      return $this->hasMany('App\Facilitator','id_Collaborative_Process');
     }
 
     public function team(){
-      return $this->hasOne('App\Team');
+      return $this->hasOne('App\Team','id_Collaborative_Process');
     }
 
     public function g_mentor_tasks(){

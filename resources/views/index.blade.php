@@ -159,7 +159,7 @@
             <br>Edificio de Ingenierías Sector Tulcán</p>
         </div>
         <div class="col-md-6 mb-5 mb-lg-0">
-          <h4 class="text-uppercase mb-4">Around the Web</h4>
+          <h4 class="text-uppercase mb-4">Redes Sociales</h4>
           <ul class="list-inline mb-0">
             <li class="list-inline-item">
               <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">

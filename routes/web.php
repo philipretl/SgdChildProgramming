@@ -35,9 +35,11 @@ Route::prefix('/sgd')->group(function(){
 
   //rutas para las practicas
   Route::get('/metodologias','User\FlavorController@index')->name('metodologias');
+  Route::get('/metodologia','User\FlavorController@indexmet')->name('metodologia');
   Route::get('/crear-metodologia/paso1','User\FlavorController@createp1')->name('crearmetodp1');
   Route::post('/store-metodologia/proceso-colaborativo','User\FlavorController@store_Collaborative_Process')->name('salvarmetodp1');
   Route::post('/store-metodologia/equipo','User\FlavorController@store_Team')->name('salvarmetodp2');
+  Route::delete('/borrar-metodologia','User\FlavorController@delete')->name('borrarmetodologia');
 
 
   //rutas para los estudiantes
@@ -83,6 +85,8 @@ Route::prefix('/sgd')->group(function(){
   Route::get('/practicas-actividad','User\PracticeController@indexAct')->name('practicasact');
   Route::get('/crear-practica','User\PracticeController@create')->name('crearpractica');
   Route::post('/salvar-practica','User\PracticeController@storep')->name('salvarpractica');
+  Route::post('/salvar-practica-smt','User\PracticeController@storepsmt')->name('salvarpracticasmt');
+  Route::post('/salvar-practica-genero','User\PracticeController@storepgen')->name('salvarpracticagenero');
 
 
 

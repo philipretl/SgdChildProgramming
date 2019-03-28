@@ -15,7 +15,7 @@ class CreateDimensionGenderTable extends Migration
     {
         Schema::create('dimension_gender', function (Blueprint $table) {
             $table->increments('id_Dimension_Gender');
-            $table->string('description_Dimension_Gender');
+            $table->string('description_Dimension_Gender')->nullable();
             $table->string('concept_Gender_Dimension_Gender');
             $table->integer('id_Child_Let_Task')->unsigned();
             $table->integer('id_Practice_Gender')->unsigned();

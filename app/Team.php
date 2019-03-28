@@ -13,13 +13,13 @@ class Team extends Model
 
 
     public function collaborative_process(){
-      return $this->belongsTo('App\Collaborative_Process','id_Collaborative_Process',
-      'id_Team');
+      return $this->belongsTo('App\Collaborative_Process','id_Collaborative_Process');
     }
 
     public function childs(){
         return $this->belongsToMany('App\Child','child_team','id_Team','id_Child')->withTimestamps();
     }
+
 
 
 }

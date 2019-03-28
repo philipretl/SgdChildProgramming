@@ -12,6 +12,7 @@ use App\Grade;
 use App\Child;
 use App\Team;
 use App\Facilitator;
+use Illuminate\Support\Facades\DB;
 
 
 class FlavorController extends Controller
@@ -22,9 +23,34 @@ class FlavorController extends Controller
       //$user = User::find(auth()->user()->id);
       $user = User::where('id_User',1)->first();
 
-      $collaborative_Process = Collaborative_Process::where('id_User',$user->id_User)
-      ->orderBy('id_Collaborative_Process','ASC')->paginate(8);
-      return view('tutor.metodologias.metodologias')->with('collaborative_Process',$collaborative_Process);
+      $collaboratives_process = Collaborative_Process::select('name_Collaborative_Process','id_Collaborative_Process')
+      ->where('id_User',$user->id_User)->pluck('name_Collaborative_Process','id_Collaborative_Process');
+
+
+      //$team = Team::where('id_Team',1)->first();
+      //dd($team);
+
+      return view('tutor.metodologias.metodologias')->with('collaboratives_process',$collaboratives_process);
+    }
+
+    public function indexmet(Request $request){
+      //$user = User::find(auth()->user()->id);
+      $user = User::where('id_User',1)->first();
+
+      $c_b = Collaborative_Process::where('id_Collaborative_Process',
+      $request->id_Collaborative_Process)->first();
+
+      $collaboratives_process = Collaborative_Process::select('name_Collaborative_Process','id_Collaborative_Process')
+      ->where('id_User',$user->id_User)->pluck('name_Collaborative_Process','id_Collaborative_Process');
+
+      $team= DB::table('child')->join('child_team','child.id_Child','=', 'child_team.id_Child')
+      ->where('id_Team',$c_b->team->id_Team)->get();
+
+      //dd($team);
+      //dd($c_b);
+      return view('tutor.metodologias.metodologias')
+      ->with('collaboratives_process',$collaboratives_process)
+      ->with('c_b',$c_b)->with('team',$team);
     }
 
     public function createp1(Request $request){
@@ -70,13 +96,25 @@ class FlavorController extends Controller
         foreach ($request->childs as $child) {
 
           $childf = Child::find($child);
-
+          //dd($childf);
           $team->childs()->attach($childf);
         }
       }
       Flash::success("Se ha agregado el Equipo correctamente");
       return redirect()->route('metodologias');
     }
+
+    public function delete(Request $request){
+      //dd($request);
+      $c_b = Collaborative_Process::where('id_Collaborative_Process',$request->id_Collaborative_Process)->first();
+      //dd($institution);
+      if ($c_b != null) {
+        $c_b->delete();
+      }
+      Flash::error("Se ha eliminado el Sabor correctamente");
+      return redirect()->route('metodologias');
+    }
+
 
 
 }

@@ -27,7 +27,7 @@ class Child_Let_Task extends Model
     }
 
     public function practices_gender(){
-      return $this->hasMany('App\Practice_Gender');
+      return $this->hasMany('App\Practice_Gender','id_Child_Let_Task');
     }
 
     public function practices(){
@@ -35,7 +35,7 @@ class Child_Let_Task extends Model
     }
 
     public function practices_smt(){
-      return $this->hasMany('App\Practice_Smt');
+      return $this->hasMany('App\Practice_Smt','id_Child_Let_Task');
     }
 
     public function roles(){

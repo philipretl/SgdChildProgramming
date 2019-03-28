@@ -17,7 +17,7 @@ class CreateChildTable extends Migration
             $table->increments('id_Child');
             $table->string('name_Child');
             $table->integer('age_Child');
-            $table->string('student_Code_Child');
+            $table->string('student_Code_Child')->nullable();
             $table->integer('id_Institution')->unsigned()->nullable();
             $table->integer('id_Grade')->unsigned();
             $table->timestamps();

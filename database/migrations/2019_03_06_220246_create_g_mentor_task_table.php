@@ -16,7 +16,7 @@ class CreateGMentorTaskTable extends Migration
         Schema::create('g_mentor_task', function (Blueprint $table) {
             $table->increments('id_G_Mentor_Task');
             $table->string('name_G_Mentor_Task');
-            $table->string('description_G_Mentor_Task');
+            $table->string('description_G_Mentor_Task')->nullable();
             $table->string('target_G_Mentor_Task');
             $table->string('inputs_G_Mentor_Task');
             $table->string('outputs_G_Mentor_Task');

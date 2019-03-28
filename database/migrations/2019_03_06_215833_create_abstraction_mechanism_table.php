@@ -15,7 +15,7 @@ class CreateAbstractionMechanismTable extends Migration
     {
         Schema::create('abstraction_mechanism', function (Blueprint $table) {
             $table->increments('id_Abstraction_Mechanism');
-            $table->string('description_Abstraction_Mechanism');
+            $table->string('description_Abstraction_Mechanism')->nullable();
             $table->integer('id_Practice')->unsigned();
             $table->timestamps();
 

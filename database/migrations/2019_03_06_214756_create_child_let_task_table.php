@@ -16,7 +16,7 @@ class CreateChildLetTaskTable extends Migration
         Schema::create('child_let_task', function (Blueprint $table) {
             $table->increments('id_Child_Let_Task');
             $table->string('name_Child_Let_Task');
-            $table->string('description_Child_Let_Task');
+            $table->string('description_Child_Let_Task')->nullable();
             $table->string('input_Child_Let_Task');
             $table->string('output_Child_Let_Task');
             $table->integer('id_Collaborative_Process')->unsigned();

@@ -15,6 +15,7 @@ class CreatePracticeSmtTable extends Migration
     {
         Schema::create('practice_smt', function (Blueprint $table) {
             $table->increments('id_Practice_Smt');
+            $table->string('name_Practice_Smt')->nullable();
             $table->string('description_Practice_Smt')->nullable();
             $table->string('inputs_Practice_Smt');
             $table->string('outputs_Practice_Smt');

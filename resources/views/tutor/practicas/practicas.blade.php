@@ -67,7 +67,7 @@
             <div class="x_content">
               <div class="" role="tabpanel" data-example-id="togglable-tabs">
                 <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
-                  <li role="presentation" class="active"><a href="#tab_content1" id="abstraccion" role="tab" data-toggle="tab" aria-expanded="true">Abstraccion</a>
+                  <li role="presentation" class="active"><a href="#tab_content1" id="abstraccion" role="tab" data-toggle="tab" aria-expanded="true">Practica Normal</a>
                   </li>
                   <li role="presentation" class=""><a href="#tab_content2" role="tab" id="mts" data-toggle="tab" aria-expanded="false">Memoria transactiva</a>
                   </li>
@@ -97,8 +97,8 @@
                                   <th scope="row">1</th>
                                   <td>{{$practice->name_Practice}}</td>
                                   <td>{{$practice->description_Practice}}</td>
-                                  <td>{{$pracice->inputs_Practice}}</td>
-                                  <td>{{$pracice->outputs_Practice}}</td>
+                                  <td>{{$practice->inputs_Practice}}</td>
+                                  <td>{{$practice->outputs_Practice}}</td>
                                   <td>
                                     <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Editar </a>
                                     <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Eliminar </a>
@@ -114,68 +114,80 @@
                   <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
                     <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo
                       booth letterpress, commodo enim craft beer mlkshk aliquip</p>
+                      @isset($practices_smt)
 
-                      <table class="table">
-                        <thead>
-                          <tr>
-                            <th>#</th>
-                            <th>Nombre Practica</th>
-                            <th>Descripcion Practica</th>
-                            <th>Entradas</th>
-                            <th>Salidas</th>
-                            <th>Opciones</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
-                            <td>
-                              <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Editar </a>
-                              <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Eliminar </a>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
+
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th>#</th>
+                              <th>Nombre Practica Smt</th>
+                              <th>Descripcion Practica Smt</th>
+                              <th>Entradas</th>
+                              <th>Salidas</th>
+                              <th>Opciones</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            @if ($practices_smt!=null)
+                              @foreach ($practices_smt as $practice_smt)
+                                <tr>
+                                  <th scope="row">1</th>
+                                  <td>{{$practice_smt->name_Practice_Smt}}</td>
+                                  <td>{{$practice_smt->description_Practice_Smt}}</td>
+                                  <td>{{$practice_smt->inputs_Practice_Smt}}</td>
+                                  <td>{{$practice_smt->outputs_Practice_Smt}}</td>
+                                  <td>
+                                    <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Editar </a>
+                                    <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Eliminar </a>
+                                  </td>
+                                </tr>
+                              @endforeach
+                            @endif
+                          </tbody>
+                        </table>
+                      @endisset
 
                   </div>
                   <div role="tabpanel" class="tab-pane fade" id="tab_content3" aria-labelledby="profile-tab">
                     <p>xxFood truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo
                       booth letterpress, commodo enim craft beer mlkshk </p>
+                      @isset($practices_gender)
+                          <table class="table">
+                            <thead>
+                              <tr>
+                                <th>#</th>
+                                <th>Nombre Practica</th>
+                                <th>Descripcion Practica</th>
+                                <th>Entradas</th>
+                                <th>Salidas</th>
+                                <th>Orientacion</th>
+                                <th>Indicador</th>
+                                <th>Opciones</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              @if ($practices_gender!=null)
+                                @foreach ($practices_gender as $practice_gender)
+                                  <tr>
+                                    <th scope="row">1</th>
+                                    <td>{{$practice_gender->name_Practice_Gender}}</td>
+                                    <td>{{$practice_gender->description_Practice_Gender}}</td>
+                                    <td>{{$practice_gender->inputs_Practice_Gender}}</td>
+                                    <td>{{$practice_gender->outputs_Practice_Gender}}</td>
+                                    <td>{{$practice_gender->orientation_Practice_Gender}}</td>
+                                    <td>{{$practice_gender->indicator_Practice_Gender}}</td>
 
-                      <table class="table">
-                        <thead>
-                          <tr>
-                            <th>#</th>
-                            <th>Nombre Practica</th>
-                            <th>Descripcion Practica</th>
-                            <th>Entradas</th>
-                            <th>Salidas</th>
-                            <th>Orientacion</th>
-                            <th>Indicador</th>
-                            <th>Opciones</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
-                            <td>
-                              <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Editar </a>
-                              <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Eliminar </a>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-
+                                    <td>
+                                      <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Editar </a>
+                                      <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Eliminar </a>
+                                    </td>
+                                  </tr>
+                                @endforeach
+                              @endif
+                            </tbody>
+                          </table>
+                      @endisset
                   </div>
                 </div>
               </div>

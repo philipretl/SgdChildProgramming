@@ -16,7 +16,7 @@ class CreatePracticeGenderTable extends Migration
         Schema::create('practice_gender', function (Blueprint $table) {
             $table->increments('id_Practice_Gender');
             $table->string('name_Practice_Gender');
-            $table->string('description_Practice_Gender');
+            $table->string('description_Practice_Gender')->nullable();
             $table->string('inputs_Practice_Gender');
             $table->string('outputs_Practice_Gender');
             $table->string('orientation_Practice_Gender');
