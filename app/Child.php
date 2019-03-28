@@ -17,7 +17,7 @@ class Child extends Model
     }
 
     public function team(){
-      return $this->belongsToMany('App\Team','child_team');
+      return $this->belongsToMany('App\Team','child_team','id_Team');
     }
 
     public function expert(){

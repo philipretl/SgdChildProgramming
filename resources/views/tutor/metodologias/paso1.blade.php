@@ -26,7 +26,7 @@
   <div class="col-md-12 col-sm-12 col-xs-12">
     <div class="x_panel">
       <div class="x_title">
-        <h2>Datos Generales de la metodologia</h2>
+        <h2>Datos Generales del Proceso Colaborativo</h2>
 
         <ul class="nav navbar-right panel_toolbox">
           <li>
@@ -57,27 +57,27 @@
       </div>
           <div class="x_content">
             <br/>
-            <form action="{{route('salvarestudiante')}}" method="POST" id="form_x" data-parsley-validate class="form-horizontal form-label-left">
+            <form action="{{route('salvarmetodp1')}}" method="POST" id="form_x" data-parsley-validate class="form-horizontal form-label-left">
                 {{ csrf_field() }}
                 <div class="form-group">
-                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Nombre <span class="required">*</span>
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Nombre <span class="required">*</span>
                   </label>
                   <div class="col-md-6 col-sm-6 col-xs-12">
-                    <input type="text" id="first-name" required="required" class="form-control col-md-7 col-xs-12">
+                    <input type="text" id="first-name" name="name_Collaborative_Process" required="required" class="form-control col-md-7 col-xs-12">
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Meta <span class="required">*</span>
                   </label>
                   <div class="col-md-6 col-sm-6 col-xs-12">
-                    <input type="text" id="last-name" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
+                    <input type="text" id="last-name" name="goal_Collaborative_Process" required="required" class="form-control col-md-7 col-xs-12">
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Descripcion <span class="required">*</span>
                   </label>
                   <div class="col-md-6 col-sm-6 col-xs-12">
-                    {!! Form::textArea('descripcion', null,['class' => 'form-control', 'required'])!!}
+                    {!! Form::textArea('description_Collaborative_Process', null,['class' => 'form-control', 'required'])!!}
                   </div>
                 </div>
 
@@ -102,9 +102,7 @@
                     <button type="submit" class="btn btn-success">Siguiente</button>
                   </div>
                 </div>
-
-
-              </form>
+            </form>
           </div>
         </div>
       </div>

@@ -17,6 +17,7 @@ class CreateCollaborativeProcessTable extends Migration
             $table->increments('id_Collaborative_Process');
             $table->string('name_Collaborative_Process');
             $table->string('goal_Collaborative_Process');
+            $table->string('description_Collaborative_Process')->nullable();
             $table->integer('id_User')->unsigned();
             $table->integer('id_Institution')->unsigned()->nullable();
             $table->timestamps();

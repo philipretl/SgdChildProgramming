@@ -22,7 +22,7 @@
       <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
           <div class="x_title">
-            <h2>Datos del equipo</h2>
+            <h2>Datos del equipo para el proceso collaborativo: {{$collaborative_Process->name_Collaborative_Process}}</h2>
 
             <ul class="nav navbar-right panel_toolbox">
               <li>
@@ -53,59 +53,56 @@
           </div>
           <div class="x_content">
             <br/>
-            <form action="" method="POST" id="form_x" data-parsley-validate class="form-horizontal form-label-left">
+            <form action="{{route('salvarmetodp2')}}" method="POST" id="form_x" data-parsley-validate class="form-horizontal form-label-left">
               {{ csrf_field() }}
+
               <div class="form-group">
+                {!! Form::hidden('id_Collaborative_Process', $collaborative_Process->id_Collaborative_Process,['class' => 'form-control', 'required','readonly'])!!}
+
                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="team_name">Nombre equipo <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input type="text" id="team_name" required="required" class="form-control col-md-7 col-xs-12">
+                  <input type="text" id="team_name" name="name_Team" required="required" class="form-control col-md-7 col-xs-12">
                 </div>
               </div>
               <div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="description_tram">Descripcion <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                  {!! Form::textArea('descripcion', null,['class' => 'form-control', 'required'])!!}
+                  {!! Form::textArea('description_Team', null,['class' => 'form-control', 'required'])!!}
                 </div>
               </div>
               <div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="description_tram">Integrantes <span class="required"></span>
                 </label>
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th>Codigo</th>
-                      <th>Nombre</th>
-                      <th>Participacion</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>Mark</td>
-                      <td>Otto</td>
-                      <td>
-                        <div class="form-group">
-                          <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="">
-                              <label>
-                                <input type="checkbox" class="js-switch" checked />
-                              </label>
-                            </div>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
 
+                <table class="table">
+                   <thead>
+                     <tr>
+                       <th>Codigo</th>
+                       <th>Nombre</th>
+                       <th>Participacion</th>
+                     </tr>
+                   </thead>
+                   <tbody>
+                       @foreach ($childs as $child)
+                         <tr>
+                           <td>{{$child->student_Code_Child}}</td>
+                           <td>{{$child->name_Child}}</td>
+                           <td>
+                             <label>{{ Form::checkbox('childs[]',$child->id_Child)}}</label>
+
+                           </td>
+                         </tr>
+                       @endforeach
+                   </tbody>
+                 </table>
               </div>
 
               <div class="form-group">
                 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
 
-                  <button type="submit" class="btn btn-success">Siguiente</button>
+                  <button type="submit" class="btn btn-success">Finalizar</button>
                 </div>
               </div>
 

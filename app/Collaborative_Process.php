@@ -8,7 +8,7 @@ class Collaborative_Process extends Model
 {
     //
     protected $table='collaborative_process';
-    protected $fillable=['name_Collaborative_Process',
+    protected $fillable=['name_Collaborative_Process', 'description_Collaborative_Process',
     'goal_Collaborative_Process', 'id_User', 'id_Institution'];
     protected $primaryKey='id_Collaborative_Process';
 

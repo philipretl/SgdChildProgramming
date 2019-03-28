@@ -8,6 +8,10 @@ use App\Collaborative_Process;
 use Laracasts\Flash\Flash;
 use App\Institution;
 use App\User;
+use App\Grade;
+use App\Child;
+use App\Team;
+
 
 class FlavorController extends Controller
 {
@@ -31,4 +35,49 @@ class FlavorController extends Controller
 
       return view('tutor.metodologias.paso1')->with('institutions', $institutions);
     }
+
+    public function store_Collaborative_Process(Request $request){
+      //$user = User::find(auth()->user()->id);
+      $user = User::where('id_User',1)->first();
+      $cb = new Collaborative_Process($request->all());
+      $cb->user()->associate($user->id_User);
+      //$grade = Grade::find($request->id_Grade);
+      //dd($grade);
+
+      $cb->save();
+
+      $childs=Child::where('id_Grade',$request->id_Grade)->get();
+      //dd($childs);
+      Flash::success("Metodologia creada correctamente");
+      return view('tutor.metodologias.paso2')->with('childs', $childs)
+      ->with('collaborative_Process',$cb);
+
+
+    }
+
+    public function store_Team(Request $request){
+      //dd($request);
+      $team = new Team($request->all());
+
+      /*foreach ($request->childs as $child) {
+        $child = Child::find($child);
+
+        $child->team()->sync($team);
+      }*/
+      $team->save();
+      if ($request->childs!=null) {
+        // code...
+
+        foreach ($request->childs as $child) {
+
+          $childf = Child::find($child);
+
+          $team->childs()->attach($childf);
+        }
+      }
+      Flash::success("Se ha agregado el Equipo correctamente");
+      return redirect()->route('metodologias');
+    }
+
+
 }

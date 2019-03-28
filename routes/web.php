@@ -36,8 +36,9 @@ Route::prefix('/sgd')->group(function(){
   //rutas para las practicas
   Route::get('/metodologias','User\FlavorController@index')->name('metodologias');
   Route::get('/crear-metodologia/paso1','User\FlavorController@createp1')->name('crearmetodp1');
-  Route::get('/crear-metodologia/paso2','User\FlavorController@createp2')->name('crearmetodp2');
-  Route::get('/crear-metodologia/paso3','User\FlavorController@createp3')->name('crearmetodp3');
+  Route::post('/store-metodologia/proceso-colaborativo','User\FlavorController@store_Collaborative_Process')->name('salvarmetodp1');
+  Route::post('/store-metodologia/equipo','User\FlavorController@store_Team')->name('salvarmetodp2');
+
 
   //rutas para los estudiantes
   Route::get('/estudiantes','User\ChildController@index')->name('estudiantes');

@@ -17,8 +17,8 @@ class Team extends Model
       'id_Team');
     }
 
-    public function child(){
-        return $this->belongsToMany('App\Child','child_team');
+    public function childs(){
+        return $this->belongsToMany('App\Child','child_team','id_Team','id_Child')->withTimestamps();
     }
 
 
